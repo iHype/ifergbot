@@ -117,7 +117,6 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
 pastebin
     .createPasteFromFile("./log.txt", "logs iferg bot", null, 1, "N")
     .then(function (data) {
-        // we have succesfully pasted it. Data contains the id
         message.author.send(data);
     })
     .fail(function (err) {
@@ -150,7 +149,7 @@ var ABC = {
 };
 
  var textToBinary = ABC.toBinary(args.join(" "));
-        message.channel.send(message.author + ": that thranslated to binary is:");
+        message.channel.send(message.author + ": that translated to binary is:");
         message.channel.send(textToBinary);
     
 };
@@ -179,7 +178,7 @@ var ABC = {
         args.splice(/@here/g,"@heré");
     }
  var binaryToText = ABC.toAscii(args.join(" "));
-        message.channel.send(message.author + ": that thranslated to normal text is:");
+        message.channel.send(message.author + ": that translated to normal text is:");
         message.channel.send(binaryToText); }
         
           if(cmd == `${prefix}mute`) {
@@ -263,6 +262,14 @@ if(cmd === `${prefix}say`) {
         args.splice(/@everyone/g, "@everyoné");
         
     }
+  let data;
+  if message.isMentioned(data) {
+    args.splice(data, "");
+  }
+    if(translateArg.includes("@everyone")) {
+        translateArg.splice(/@everyone/g, "@everyoné");
+        
+    }
     if (args.includes("@here")) {
         args.splice(/@here/g,"@heré");
     }
@@ -298,7 +305,7 @@ if(cmd === `${prefix}say`) {
     message.channel.send(botembed);
  }}
  if(cmd === `${prefix}gayrate`) {
-      if (args == "<@299495028756054016>" || args == "<@430447525800181762>" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
+      if (args.id == "<@299495028756054016>" || args == "<@430447525800181762>" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
      let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
     .setDescription(args + " is 0% gay. Always");

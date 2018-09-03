@@ -262,9 +262,9 @@ if(cmd === `${prefix}say`) {
         args.splice(/@everyone/g, "@everyoné");
         
     }
-  let data;
-  if (message.isMentioned(data)) {
-    args.splice(data, "");
+  if (message.isMentioned() == true) {
+    let messageMentions = message.mentions
+    args.splice(messageMentions, "");
   }
     if(translateArg.includes("@everyone")) {
         translateArg.splice(/@everyone/g, "@everyoné");

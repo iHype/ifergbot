@@ -263,7 +263,7 @@ if(cmd === `${prefix}say`) {
         
     }
   let data;
-  if message.isMentioned(data) {
+  if (message.isMentioned(data)) {
     args.splice(data, "");
   }
     if(translateArg.includes("@everyone")) {

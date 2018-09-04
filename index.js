@@ -272,7 +272,7 @@ if(cmd === `${prefix}say`) {
         args.splice(/@here/g,"@heré");
     }     
 
-  if(message.mentions !== "") {
+  if(MessageMentions.members !== "" || MessageMentions.roles !== "") {
   message.delete();
    message.author.send("You may not use the bot for tagging/mentioning people or roles.");
     return;

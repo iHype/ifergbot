@@ -270,7 +270,9 @@ if(cmd === `${prefix}say`) {
     if (args.includes("@here")) {
         args.splice(/@here/g,"@heré");
     }     
-args.splice( args.indexOf('<@&481534348303007754>'), 1 );
+for( var i = args.length-1; i--;){
+if ( args[i] === '<@') args.splice(i, 1);
+}
      let argsSay = args.join(" ");  
     message.channel.send(argsSay);
     console.log(message.author + " just made the bot say:\n" + argsSay);

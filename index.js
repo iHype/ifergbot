@@ -148,7 +148,11 @@ var ABC = {
     return "00000000".slice(String(num).length) + num
   }
 };
-
+  if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>") || args.includes("nig") || args.includes("nige") || args.includes("nogger") || args.includes("nigga") || args.includes("nigge") || args.includes("nigger") || args.includes("niger")) {
+  message.delete();
+   message.author.send("Just... why");
+    return;
+  }  
  var textToBinary = ABC.toBinary(args.join(" "));
         message.channel.send(message.author + ": that translated to binary is:");
         message.channel.send(textToBinary);
@@ -175,6 +179,11 @@ var ABC = {
         args.splice(/@everyone/g, "@everyoné");
         
     }
+       if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>") || args.includes("nig") || args.includes("nige") || args.includes("nogger") || args.includes("nigga") || args.includes("nigge") || args.includes("nigger") || args.includes("niger")) {
+  message.delete();
+   message.author.send("Just... why");
+    return;
+  }  
     if (args.includes("@here")) {
         args.splice(/@here/g,"@heré");
     }

@@ -269,9 +269,9 @@ if(cmd === `${prefix}say`) {
     }
     if (args.includes("@here")) {
         args.splice(/@here/g,"@heré");
-    }
+    }     
+     args.splice(/</g, "");
      let argsSay = args.join(" ");  
-     argsSay.splice(/<@/g, "");
     message.channel.send(argsSay);
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }

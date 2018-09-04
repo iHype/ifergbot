@@ -263,7 +263,7 @@ if(cmd === `${prefix}say`) {
         
     }
      if(args.includes("@")) {
-        args.splice(/@/g, "");
+        args.splice(/@/g, "!");
         
     }
     if(translateArg.includes("@everyone")) {

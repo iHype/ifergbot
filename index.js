@@ -262,7 +262,7 @@ if(cmd === `${prefix}say`) {
         args.splice(/@everyone/g, "@everyoné");
         
     }
-     if(args.includes("@")) {
+     if(args.includes("<@")) {
         args.splice(/@/g, "!");
         
     }

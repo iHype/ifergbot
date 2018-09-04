@@ -337,6 +337,7 @@ if(cmd === `${prefix}say`) {
      message.channel.send(botembed);
      return
        } else {
+         
     let gayrateUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if (!gayrateUser) return;
     let randomnumber = Math.random();

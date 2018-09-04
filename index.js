@@ -272,14 +272,11 @@ if(cmd === `${prefix}say`) {
         args.splice(/@here/g,"@heré");
     }     
 
-  if(message.guild.members.get(args) != "") {
+  if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>")) {
   message.delete();
-   message.author.send("You may not use the bot for tagging/mentioning people or roles.");
+   message.author.send("Just... why");
     return;
   }  
-  
-  
-  
   let argsSay = args.join(" ");  
     message.channel.send(argsSay);
     console.log(message.author + " just made the bot say:\n" + argsSay);

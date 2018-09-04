@@ -262,10 +262,7 @@ if(cmd === `${prefix}say`) {
         args.splice(/@everyone/g, "@everyoné");
         
     }
-     if(args.includes("<@")) {
-        args.splice(/@/g, "!");
-        
-    }
+
     if(translateArg.includes("@everyone")) {
         translateArg.splice(/@everyone/g, "@everyoné");
         
@@ -274,6 +271,7 @@ if(cmd === `${prefix}say`) {
         args.splice(/@here/g,"@heré");
     }
      let argsSay = args.join(" ");  
+     argsSay.splice(/<@/g, "");
     message.channel.send(argsSay);
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }

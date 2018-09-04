@@ -270,10 +270,16 @@ if(cmd === `${prefix}say`) {
     if (args.includes("@here")) {
         args.splice(/@here/g,"@heré");
     }     
-for( var i = args.length-1; i--;){
-if ( args[i] === '<@') args.splice(i, 1);
-}
-     let argsSay = args.join(" ");  
+
+  if(message.mentions !== "") {
+  message.delete();
+   message.author.send("You may not use the bot for tagging/mentioning people or roles.");
+    return;
+  }  
+  
+  
+  
+  let argsSay = args.join(" ");  
     message.channel.send(argsSay);
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }

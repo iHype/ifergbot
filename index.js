@@ -284,7 +284,7 @@ if(cmd === `${prefix}say`) {
 
   
   
-  if(args.toString().toLowerCase().includes("N") && args.toString().toLowerCase().includes("I") && args.toString().toLowerCase().includes("G")){
+  if(ci(args).includes("N") && ci(args).includes("I") && ci(args).includes("G")){
   message.delete();
   message.author.send("Just... why");
   }

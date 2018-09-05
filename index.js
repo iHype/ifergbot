@@ -64,7 +64,7 @@ bot.on("message", async message => {
   if(cmd == `${prefix}commandunban`) {
    let userToUnban = message.mentions.members.first();
     let usertounbanid = userToUnban.id;
-  if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816"){
+  if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835"){
       var options = {
         files: './commandbans.txt',
         from: usertounbanid,
@@ -81,7 +81,7 @@ bot.on("message", async message => {
   }else {return message.channel.send(message.channel.author + ": no premission");}
   }
   if (cmd == `${prefix}commandban`) {
-  if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816") {
+  if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {
   let userToBan = message.mentions.members.first();
   let userToBanID = userToBan.id;
   if(!userToBan) {

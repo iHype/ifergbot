@@ -289,7 +289,7 @@ if(cmd == `${prefix}translate`) {
             ADD_REACTIONS: null
           });
         });
-    
+    message.delete(1);
     }
 if(cmd === `${prefix}say`) {
     

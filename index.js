@@ -1,7 +1,8 @@
 const botconfig = require("./botconfig.json");
 const ci = require('case-insensitive');
 var Filter = require('bad-words'),
-    filter = new Filter();
+    filter = new Filter({ placeHolder: "x"});
+filter.addWords(['niga', 'nogger', 'n1gg4', "n1gga", "nigg4", "nig"]);
 const google = require("google");
 var PastebinAPI = require('pastebin-js')
 pastebin = new PastebinAPI(process.env.dev_key_pastebin);

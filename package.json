@@ -11,7 +11,7 @@
     		"google": "2.1.0",
 		"pastebin-js": "0.5.1",
 		"case-insensitive": "1.0.0",
-		"f-ck": "1.0.3"
+		"grawlix": "1.0.6"
   },
 	"scripts": {
 		"start": "node index.js"

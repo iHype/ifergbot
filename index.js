@@ -1,13 +1,7 @@
 const botconfig = require("./botconfig.json");
 const ci = require('case-insensitive');
-var grawlix = require('grawlix');
-grawlix.setDefaults({
-  style: 'ascii',
-  randomize: true,
-  filters: [],
-  allowed: [],
-  plugins: []
-});
+var Filter = require('bad-words'),
+    filter = new Filter();
 const google = require("google");
 var PastebinAPI = require('pastebin-js')
 pastebin = new PastebinAPI(process.env.dev_key_pastebin);
@@ -299,7 +293,7 @@ if(cmd === `${prefix}say`) {
     return;
   }  
   let argsSay = args.join(" ");  
-    message.channel.send(grawlix(argsSay));
+    message.channel.send(filter.clean(argsSay));
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }
 

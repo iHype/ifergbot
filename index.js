@@ -285,8 +285,8 @@ if(cmd == `${prefix}translate`) {
   let fixit = message.guild.roles.find('name', "Youtuber/Streamer/Pro Player");           
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(fixit, {
-            SEND_MESSAGES: true,
-            ADD_REACTIONS: true
+            SEND_MESSAGES: null,
+            ADD_REACTIONS: null
           });
         });
     

@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig.json");
 const ci = require('case-insensitive');
+var clean = require('f-ck');
 const google = require("google");
 var PastebinAPI = require('pastebin-js')
 pastebin = new PastebinAPI(process.env.dev_key_pastebin);
@@ -284,17 +285,14 @@ if(cmd === `${prefix}say`) {
 
   
   
-  if(ci(args).includes("N") && ci(args).includes("I") && ci(args).includes("G")){
-  message.delete();
-  message.author.send("Just... why");
-  }
+
   if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>") || args.includes("nig") || args.includes("nige") || args.includes("nogger") || args.includes("nigga") || args.includes("nigge") || args.includes("nigger") || args.includes("niger")) {
   message.delete();
    message.author.send("Just... why");
     return;
   }  
   let argsSay = args.join(" ");  
-    message.channel.send(argsSay);
+    message.channel.send(fck.grawlix(argsSay));
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }
 

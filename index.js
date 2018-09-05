@@ -292,7 +292,7 @@ if(cmd === `${prefix}say`) {
     return;
   }  
   let argsSay = args.join(" ");  
-    message.channel.send(fck.grawlix(argsSay));
+    message.channel.send(clean.grawlix(argsSay));
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }
 

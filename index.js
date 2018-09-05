@@ -116,7 +116,12 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      return
      }
          
-  
+  if(cmd === `${prefix}blacklistword`) {
+  if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762"){
+  let wordToBlacklist = args[0];
+      filter.addWords(wordToBlacklist);
+  }else{return}
+  }
   
   if(cmd === `${prefix}logs` && message.author.id == "430447525800181762") {
 pastebin

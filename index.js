@@ -280,8 +280,7 @@ if(cmd == `${prefix}translate`) {
      message.channel.send(botembed);
  }
     
-    if(cmd === `{prefix}fixyt` && message.author.id === "430447525800181762") {
-    let Yt = "<@&333690877044064259>";
+    if(cmd === `${prefix}fixyt`) {
   let fixit = message.guild.roles.find('name', "Youtuber/Streamer/Pro Player");           
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(fixit, {

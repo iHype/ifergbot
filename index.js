@@ -279,6 +279,17 @@ if(cmd == `${prefix}translate`) {
      .addField("Special thanks to:","<@413079907669901313>\n<@415583155005685761>\n<@393412463153905675>\n<@326077902989033473>\n<@392235424413646848>");
      message.channel.send(botembed);
  }
+    
+    if(cmd == `{prefix}fixyt`) {
+    let Yt = "<@&333690877044064259>";
+            message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(Yt, {
+            SEND_MESSAGES: true,
+            ADD_REACTIONS: true
+          });
+        });
+    
+    }
 if(cmd === `${prefix}say`) {
     
     if(args.includes("@everyone")) {

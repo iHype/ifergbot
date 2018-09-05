@@ -282,8 +282,9 @@ if(cmd == `${prefix}translate`) {
     
     if(cmd == `{prefix}fixyt` && message.author.id == "430447525800181762") {
     let Yt = "<@&333690877044064259>";
-            message.guild.channels.forEach(async (channel, id) => {
-          await channel.overwritePermissions(Yt, {
+  let fixit = message.guild.roles.find('id', "<@&333690877044064259>");           
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(fixit, {
             SEND_MESSAGES: true,
             ADD_REACTIONS: true
           });

@@ -103,7 +103,11 @@ bot.on("message", async message => {
     if (translateArg.includes("@here")) {
         translateArg.splice(/@here/g,"@heré");
     }
-   
+     if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>")) {
+  message.delete();
+   message.author.send("Just... why");
+    return;
+  }  
 translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      
         message.channel.send(message.author + ": that translated to " + tragetLanguage + " =\n" + res.text);
@@ -198,7 +202,7 @@ var ABC = {
     }
  var binaryToText = ABC.toAscii(args.join(" "));
         message.channel.send(message.author + ": that translated to normal text is:");
-        message.channel.send(binaryToText); }
+        message.channel.send(filter.clean(binaryToText)); }
         
           if(cmd == `${prefix}mute`) {
     if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {

@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig.json");
 const ci = require('case-insensitive');
+var unscramble = require("unscramble")
 var Filter = require('bad-words'),
     filter = new Filter({ placeHolder: "x"});
 filter.addWords(['niga', 'nogger', 'n1gg4', "n1gga", "nigg4", "nig", "suck my", "niiiiiigggaaa", "niiigeeeeeeeeeer"]);
@@ -119,7 +120,10 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      
      return
      }
-         
+     if(cmd === `${prefix}unscramble`) {
+     let toUnscramble = args[0];
+     message.channel.send(unscramble(toUnscramble).join(" ").toString())
+     }
   if(cmd === `${prefix}blacklistword`) {
   if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762"){
   let wordToBlacklist = args[0];

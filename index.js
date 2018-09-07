@@ -59,8 +59,8 @@ bot.on("message", async message => {
     if(cmd == `${prefix}fortnitetrack`){
         let platform = args[0]
         let fortniteTracked = args[1];
-fortnite.user(fortniteTracked, platform).then(message.channel.send);    
-    
+        let fortnitetrack = fortnite.user(fortniteTracked, platform);
+        message.channel.send(fortnitetrack);
     }
   if (cmd == `${prefix}banlist`) {
   let bannedUsers = commandbans.toString();

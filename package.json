@@ -12,7 +12,8 @@
 		"pastebin-js": "0.5.1",
 		"case-insensitive": "1.0.0",
 		"bad-words": "1.6.3",
-		"unscramble": "0.0.2-r"
+		"unscramble": "0.0.2-r",
+		"fortnite": "4.1.1"
   },
 	"scripts": {
 		"start": "node index.js"

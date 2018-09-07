@@ -121,9 +121,10 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      return
      }
      if(cmd === `${prefix}unscramble`) {
+         if(message.author.id == "341602886935117835" || message.author.id == "430447525800181762"){
      let toUnscramble = args[0];
      message.channel.send(unscramble(toUnscramble).join(" ").toString())
-     }
+     }}
   if(cmd === `${prefix}blacklistword`) {
   if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762"){
   let wordToBlacklist = args[0];

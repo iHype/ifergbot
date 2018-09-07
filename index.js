@@ -128,7 +128,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      }
     
     if(cmd === `${prefix}whitelistword`) {
-    if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
+    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
         try{
     filter.removeWords(args.join(" ").toString());
     message.channel.send(message.author + ": succesfully whitelisted word " + args[0])
@@ -138,17 +138,16 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
         }
     }}
      if(cmd === `${prefix}unscramble`) {
-         if(message.author.id == "341602886935117835" || message.author.id == "430447525800181762"){
      let toUnscramble = args[0];
      message.channel.send(unscramble(toUnscramble).join(" ").toString())
-     }}
+     }
   if(cmd === `${prefix}blacklistword`) {
   if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
   let wordToBlacklist = args[0];
       filter.addWords(wordToBlacklist);
   }
   }
-  
+
   if(cmd === `${prefix}logs` && message.author.id == "430447525800181762") {
 pastebin
     .createPasteFromFile("./log.txt", "logs iferg bot", null, 1, "N")
@@ -364,6 +363,7 @@ if(cmd === `${prefix}say`) {
     let userGayRate = message.author.username;
     let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
+    .setColor("#36393F")
     .setDescription(userGayRate + " is " + gayrate + "% gay");
 
     message.channel.send(botembed);
@@ -372,12 +372,14 @@ if(cmd === `${prefix}say`) {
       if (args.id == "<@299495028756054016>" || args == "<@430447525800181762>" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
      let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
+    .setColor("#36393F")
     .setDescription(args + " is 0% gay. Always");
      message.channel.send(botembed);
      return
      }else if (args == "<@!440191033591070732>") {
     let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
+    .setColor("#36393F")
     .setDescription(args + " is 100% gay. Always");
      message.channel.send(botembed);
      return
@@ -392,6 +394,7 @@ if(cmd === `${prefix}say`) {
     }
     let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
+    .setColor("#36393F")
     .setDescription(gayrateUser + " is " + gayrate + "% gay.");
     message.channel.send(botembed);
     }}

@@ -294,11 +294,11 @@ if(cmd == `${prefix}translate`) {
 */
  if(cmd === `${prefix}credits`) {
      let botembed = new Discord.RichEmbed()
-     .setTitle("Credits")
+     .setTitle("Access ranks")
      .setColor("#00ff19")
      .addField("Access level 3: ", "<@430447525800181762>\n<@299495028756054016>\n<@!453970692266786816>")
      .addField("Access level 2:", "** **")
-     .addField("Access level 1", "<@!341602886935117835>\n<@!393412463153905675>");
+     .addField("Access level 1", "<@!341602886935117835>\n<@!393412463153905675>\n<@437254213689540610>");
      message.channel.send(botembed);
  }
     
@@ -427,6 +427,7 @@ if(cmd === `${prefix}say`) {
     .addField("`-help`", "shows this help message containing all commands\n")
     .addField("`-binarytotext` `01110100 01100101 01111000 01110100`","tranlsates the binary provided into readable words/sentences")
     .addField("`texttobinary` `text`","translates the provided text to binary")
+    .addField("`unscramble` `etxt`", "unscrambles the text given")
     //.addField("`-setreportchannel`","[requires permission: VIEW_AUDIT_LOG] sets the reports channel to `channel`")
     .addField("`-translate` `target-language` `text to be translated`","\ntranslates `text to be translated` to `target-language` for example: `-translate` `nl` `Hello` this translates `Hello` to `nl` (nl = Dutch)\n")
     //.addField("`-report` `@user` `reason`", "reports @user to the staff with reason provided (please provide proof within ur reason)\n")

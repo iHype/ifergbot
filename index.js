@@ -130,7 +130,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
     if(cmd === `${prefix}whitelistword`) {
     if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
         try{
-    filter.removeWords(args[0].join(" ").toString());
+    filter.removeWords(args.join(" ").toString());
     message.channel.send(message.author + ": succesfully whitelisted word " + args[0])
         }catch(err){
         message.channel.send("Error occurred\n" + err);

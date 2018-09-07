@@ -1,5 +1,7 @@
 const botconfig = require("./botconfig.json");
 const ci = require('case-insensitive');
+const Client = require('fortnite');
+const fortnite = new Client(process.env.FORTNITETRACKER);
 var unscramble = require("unscramble")
 var Filter = require('bad-words'),
     filter = new Filter({ placeHolder: "x"});
@@ -38,7 +40,6 @@ bot.on("message", async message => {
       message.delete();
       message.author.send(message.author + ": you have been banned from using commands of this bot\nTo regain access please DM <@430447525800181762>, <@299495028756054016>, <@453970692266786816> or any of the Mods/Admins of Ferg.");
       return; }
-  console.log(message.author + " just mentioned\n" + message.mentions + "\n\n");
   
   
 
@@ -55,7 +56,12 @@ bot.on("message", async message => {
     return message.author.sendMessage("Check https://cloud.google.com/translate/docs/languages for language codes.");
   }
   
-  
+    if(cmd == `${prefix}fortnitetrack`){
+        let platform = args[0]
+        let fortniteTracked = args[1];
+fortnite.user(fortniteTracked, platform).then(message.channel.send);    
+    
+    }
   if (cmd == `${prefix}banlist`) {
   let bannedUsers = commandbans.toString();
   message.channel.send("These are the **id's** of the current banned members from using iFerg Bot\n" + bannedUsers);

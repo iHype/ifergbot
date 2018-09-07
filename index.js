@@ -126,6 +126,16 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      
      return
      }
+    
+    if(cmd === `${prefix}whitelistword`) {
+        try{
+    filter.removeWords(args);
+    message.channel.send(message.author + ": succesfully whitelisted word " + args[0])
+        }catch(err){
+        message.channel.send("Error occurred\n" + err);
+            console.log(err)
+        }
+    }
      if(cmd === `${prefix}unscramble`) {
          if(message.author.id == "341602886935117835" || message.author.id == "430447525800181762"){
      let toUnscramble = args[0];

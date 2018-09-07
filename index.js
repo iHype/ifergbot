@@ -285,9 +285,9 @@ if(cmd == `${prefix}translate`) {
      let botembed = new Discord.RichEmbed()
      .setTitle("Credits")
      .setColor("#00ff19")
-     .addField("Programmer and boss over the bot: ", "<@430447525800181762>")
-     .addField("Co-Owners:", "<@!453970692266786816>\n<@299495028756054016>")
-     .addField("Special thanks to:","<@413079907669901313>\n<@415583155005685761>\n<@393412463153905675>\n<@326077902989033473>\n<@392235424413646848>");
+     .addField("Access level 3: ", "<@430447525800181762>\n<@!453970692266786816>\n<@299495028756054016>")
+     .addField("Access level 2:", "** **")
+     .addField("Access level 1", "<@!341602886935117835>\n<@!393412463153905675>");
      message.channel.send(botembed);
  }
     

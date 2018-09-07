@@ -295,7 +295,7 @@ if(cmd == `${prefix}translate`) {
      let botembed = new Discord.RichEmbed()
      .setTitle("Credits")
      .setColor("#00ff19")
-     .addField("Access level 3: ", "<@430447525800181762>\n<@!453970692266786816>\n<@299495028756054016>")
+     .addField("Access level 3: ", "<@430447525800181762>\n<@299495028756054016>\n<@!453970692266786816>")
      .addField("Access level 2:", "** **")
      .addField("Access level 1", "<@!341602886935117835>\n<@!393412463153905675>");
      message.channel.send(botembed);

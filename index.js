@@ -161,11 +161,11 @@ pastebin
   }
   
   if(cmd === `${prefix}nick`) {
-    if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762"){
+  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
     let userNick = message.mentions.members.first();
 
     userNick.setNickname(translateArg.join(" ").toString())
-      message.delete();
+      message.delete(1);
   }}
   if(cmd === `${prefix}texttobinary`) {
 var ABC = {

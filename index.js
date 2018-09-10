@@ -116,8 +116,9 @@ bot.on("message", async message => {
     return;
   }  
 translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
-     
-        message.channel.send(message.author + ": that translated to " + tragetLanguage + " =\n" + filter.clean(res.text));
+     let a = res.text;
+    let b = b.join(" ").toString()
+        message.channel.send(message.author + ": that translated to " + tragetLanguage + " =\n" + filter.clean(b));
     
 }).catch(err => {
     console.error(err);

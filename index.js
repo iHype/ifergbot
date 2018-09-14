@@ -363,7 +363,7 @@ if(cmd === `${prefix}say`) {
     message.channel.send(botembed);
  }}
  if(cmd === `${prefix}gayrate`) {
-      if (args.id == "<@299495028756054016>" || args == "<@430447525800181762>" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
+      if (args == "<@299495028756054016>" || args == "<@430447525800181762>" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
      let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
     .setColor("#36393F")

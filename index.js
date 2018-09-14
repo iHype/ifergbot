@@ -131,7 +131,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
     if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
         try{
     filter.removeWords(args.join(" ").toString());
-    let confirmWhitelist message.channel.send(message.author + ": succesfully whitelisted word(s): " + args);
+    let confirmWhitelist = message.channel.send(message.author + ": succesfully whitelisted word(s): " + args);
         confirmWhitelist.delete(3000);
         }catch(err){
         message.channel.send("Error occurred\n" + err);

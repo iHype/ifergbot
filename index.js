@@ -135,7 +135,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
 });
     }
     if(cmd === `${prefix}whitelistword`) {
-    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
+    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id === "392235424413646848" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
         try{
     filter.removeWords(args.join(" ").toString());
         message.channel.send(message.author + ": succesfully whitelisted word(s): " + args);
@@ -149,7 +149,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      message.channel.send(unscramble(toUnscramble).join(" ").toString())
      }
   if(cmd === `${prefix}blacklistword`) {
-  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
+  if(message.author.id == "299495028756054016" || message.author.id === "392235424413646848" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
   let wordsToBlacklist = args;
       filter.addWords(wordsToBlacklist);
   }
@@ -163,7 +163,7 @@ message.author.sendFile('./log.txt');
   } }
   
   if(cmd === `${prefix}nick`) {
-  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
+  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816" || message.author.id === "392235424413646848"){
     let userNick = message.mentions.members.first();
 
     userNick.setNickname(translateArg.join(" ").toString())
@@ -298,8 +298,8 @@ if(cmd == `${prefix}translate`) {
      .setTitle("Access ranks")
      .setColor("#00ff19")
      .addField("Access level 3: ", "<@430447525800181762>\n<@299495028756054016>\n<@!453970692266786816>")
-     .addField("Access level 2:", "** **")
-     .addField("Access level 1", "<@!341602886935117835>\n<@!393412463153905675>\n<@437254213689540610>");
+     .addField("Access level 2:", "<@341602886935117835>")
+     .addField("Access level 1", "<@392235424413646848>\n<@!341602886935117835>\n<@!393412463153905675>\n<@437254213689540610>");
      message.channel.send(botembed);
  }
     

@@ -1,4 +1,5 @@
 const botconfig = require("./botconfig.json");
+var define = require('define-it').definitions;
 const ci = require('case-insensitive');
 const Client = require('fortnite');
 const fortnite = new Client(process.env.FORTNITETRACKER);
@@ -126,7 +127,13 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      
      return
      }
-    
+    if(cmd === `${prefix}define`){
+    let wordToDefine = args[0].join(" ").toString();
+    define(wordToDefine, function(err, res) {
+    if (err) console.error(err);
+    if (res) console.log(res);
+});
+    }
     if(cmd === `${prefix}whitelistword`) {
     if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
         try{

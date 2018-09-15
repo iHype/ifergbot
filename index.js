@@ -128,7 +128,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      return
      }
     if(cmd === `${prefix}define`){
-    let wordToDefine = args[0].join(" ").toString();
+    let wordToDefine = args[0];
     define(wordToDefine, function(err, res) {
     if (err) console.error(err);
     if (res) console.log(res);

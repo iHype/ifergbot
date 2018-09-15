@@ -156,7 +156,7 @@ message.author.sendFile('./log.txt');
   } }
   
   if(cmd === `${prefix}nick`) {
-  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
+  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
     let userNick = message.mentions.members.first();
 
     userNick.setNickname(translateArg.join(" ").toString())

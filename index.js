@@ -128,7 +128,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      }
     
     if(cmd === `${prefix}whitelistword`) {
-    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
+    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
         try{
     filter.removeWords(args.join(" ").toString());
         message.channel.send(message.author + ": succesfully whitelisted word(s): " + args);
@@ -142,7 +142,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
      message.channel.send(unscramble(toUnscramble).join(" ").toString())
      }
   if(cmd === `${prefix}blacklistword`) {
-  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675"){
+  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
   let wordsToBlacklist = args;
       filter.addWords(wordsToBlacklist);
   }
@@ -150,7 +150,7 @@ message.channel.send(message.author + ": successfully blacklisted word(s): " + a
   }
 
   if(cmd === `${prefix}logs`) {
-      if(message.author.id === "430447525800181762" || message.author.id === "299495028756054016") {
+      if(message.author.id === "430447525800181762" || message.author.id === "299495028756054016" || message.author.id === "453970692266786816") {
 message.author.sendFile('./log.txt');
       message.delete(1);
   } }

@@ -14,7 +14,8 @@
 		"bad-words": "1.6.3",
 		"unscramble": "0.0.2-r",
 		"fortnite": "4.1.1",
-		"define-it": "0.0.2"
+		"define-it": "0.0.2",
+		"ms": "2.1.1"
   },
 	"scripts": {
 		"start": "node index.js"

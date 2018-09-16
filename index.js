@@ -73,7 +73,7 @@ bot.on("message", async message => {
   
   }
   if(cmd == `${prefix}voicemute` && message.author.id === "430447525800181762") {
-      let voiceMuteMember = args[0];
+      let voiceMuteMember = message.mentions.members.first();
       voiceMuteMember.setMute(true);
       }
   if(cmd == `${prefix}commandunban`) {

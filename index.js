@@ -374,10 +374,9 @@ return message.author.send("Please do not use the bot to say anything including 
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }
 if(cmd === `${prefix}saydelete`) {
-    
+             if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
     if(args.includes("@everyone")) {
-         if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
-     
+
         args.splice(/@everyone/g, "@everyoné");
         
     }

@@ -126,6 +126,9 @@ bot.on("message", async message => {
     if (translateArg.includes("@here")) {
         translateArg.splice(/@here/g,"@heré");
     }
+     if(args.toString().includes("<")){
+return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
      if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>")) {
   message.delete();
    message.author.send("Just... why");
@@ -160,6 +163,9 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
         }
     }}
      if(cmd === `${prefix}unscramble`) {
+     if(args.toString().includes("<")){
+return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
      let toUnscramble = args[0];
      message.channel.send(unscramble(toUnscramble).join(" ").toString())
      }
@@ -185,6 +191,9 @@ message.author.sendFile('./log.txt');
       message.delete(1);
   }}
   if(cmd === `${prefix}texttobinary`) {
+      if(args.toString().includes("<")){
+return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
 var ABC = {
   toAscii: function(bin) { 
     
@@ -210,6 +219,9 @@ var ABC = {
     
 };
    if(cmd === `${prefix}binarytotext`) {
+       if(args.toString().includes("<")){
+return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
   var ABC = {
   toAscii: function(bin) {
     return bin.replace(/\s*[01]{8}\s*/g, function(bin) {
@@ -346,7 +358,9 @@ if(cmd === `${prefix}say`) {
     if (args.includes("@here")) {
         args.splice(/@here/g,"@heré");
     }     
-
+if(args.toString().includes("<")){
+return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
   
   
 

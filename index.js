@@ -369,10 +369,42 @@ return message.author.send("Please do not use the bot to say anything including 
    message.author.send("Just... why");
     return;
   }  
-  let argsSay = args.join(" ");  
+  let argsSay = args.join(" ").toString();  
     message.channel.send(filter.clean(argsSay));
     console.log(message.author + " just made the bot say:\n" + argsSay);
 }
+if(cmd === `${prefix}saydelete`) {
+    
+    if(args.includes("@everyone")) {
+         if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
+     
+        args.splice(/@everyone/g, "@everyoné");
+        
+    }
+
+    if(translateArg.includes("@everyone")) {
+        translateArg.splice(/@everyone/g, "@everyoné");
+        
+    }
+    if (args.includes("@here")) {
+        args.splice(/@here/g,"@heré");
+    }     
+if(args.toString().includes("<")){
+return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
+  
+  
+
+  if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>")) {
+  message.delete();
+   message.author.send("Just... why");
+    return;
+  }  
+  let argsSay = args.join(" ").toString();  
+    message.channel.send(filter.clean(argsSay));
+    message.delete();
+    console.log(message.author + " just made the bot say:\n" + argsSay);
+}}
 
  if(cmd === `${prefix}gayrate` && args == "") {
      if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816"  || message.author.id == "424953131386798080" || message.author.id == "341602886935117835" && args == "") {

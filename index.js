@@ -1,4 +1,5 @@
 const botconfig = require("./botconfig.json");
+const ms = require("ms");
 var define = require('define-it').definitions;
 const ci = require('case-insensitive');
 const Client = require('fortnite');
@@ -26,6 +27,9 @@ bot.on("ready", async ready => {
   .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
 })
 bot.on("message", async message => {
+    if(message.guild.id === "282275654760660993") {
+        return;
+        }
   var logs = fs.readFileSync("./log.txt", "utf-8");
   if(message.author.bot) return;
   if(message.channel.type === "dm") return message.channel.send("DM commands do not work, to use my bot please join the FergFam to use it\nhttps://www.discord.gg/fergfam");
@@ -250,6 +254,10 @@ var ABC = {
       let muteroleid = muterole.id;
   await(mUser.addRole(muteroleid));
       message.delete();
+        setTimeout(function() {
+            mUser.removeRole(muteroleid);
+
+            }, ms(args[1]))
   }}
 
   

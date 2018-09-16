@@ -72,7 +72,10 @@ bot.on("message", async message => {
   message.channel.send("These are the **id's** of the current banned members from using iFerg Bot\n" + bannedUsers);
   
   }
-  
+  if(cmd == `${prefix}voicemute` && message.author.id === "430447525800181762") {
+      let voiceMuteMember = args[0];
+      voiceMuteMember.setMute(true);
+      }
   if(cmd == `${prefix}commandunban`) {
    let userToUnban = message.mentions.members.first();
     let usertounbanid = userToUnban.id;

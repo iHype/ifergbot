@@ -514,8 +514,8 @@ return message.author.send("Please do not use the bot to say anything including 
     return;
  }
  if(cmd == `${prefix}helplvl1`){
-    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816" || message.author.id === "392235424413646848"){
-        let bicon = bot.displayAvatarURL;
+    if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {
+       let bicon = bot.displayAvatarURL;
         message.channel.send(`<@${message.author.id}>, check your DM's`);
         let botembed = new Discord.RichEmbed()
         .setColor("#32b0ff")

@@ -42,6 +42,9 @@ bot.on("message", async message => {
   var commandbans = fs.readFileSync("./commandbans.txt", "utf-8");
   fs.appendFile("./log.txt", message.author + " with username " + message.author.username + " wrote a message at " + message.createdAt +  ":\n" + message + "\nin guild: " + message.guild.name + " in channel: " + message.channel + " with the name: #" + message.channel.name + "\n\n");
   if(cmd.startsWith("-") && commandbans.includes(message.author.id)) {
+      if(message.author.id === "299495028756054016" || message.author.id == "430447525800181762"){
+          return
+      }
       message.delete();
       message.author.send(message.author + ": you have been banned from using commands of this bot\nTo regain access please DM <@430447525800181762>, <@299495028756054016>, <@453970692266786816> or any of the Mods/Admins of Ferg.");
       return; }
@@ -50,7 +53,7 @@ bot.on("message", async message => {
 
  if(cmd == `${prefix}unmute`){
       if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
-  let muser =  message.mentions.members.first() || message.guild.members.get(args[0]);
+        let muser =  message.mentions.members.first() || message.guild.members.get(args[0]);
         let unmrole = message.guild.roles.find('name', "muted");
         muser.removeRole(unmrole);
         message.delete();
@@ -510,7 +513,54 @@ return message.author.send("Please do not use the bot to say anything including 
     message.author.sendMessage(botembed);
     return;
  }
-
+ if(cmd == `${prefix}helplvl1`){
+    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816" || message.author.id === "392235424413646848"){
+        let bicon = bot.displayAvatarURL;
+        message.channel.send(`<@${message.author.id}>, check your DM's`);
+        let botembed = new Discord.RichEmbed()
+        .setColor("#32b0ff")
+        .setTitle("TOP SECRET COMMANDS, DO NOT TELL ANYONE YOU HAVE ACCESS TO THESE COMMANDS!")
+        .setDescription("**Access level 1 commands:**")
+        .addField("`-blacklistword` `word`", "Blacklists the word given\n")
+        .addField("`-whitelistword` `word`", "Whitelists the word given\n")
+        .addField("`-nick` `@user` `nickname`", "Nicks the user to nickname provided")
+        .setThumbnail(bicon);
+        message.author.sendMessage(botembed);
+        return;
+        }
+    }
+  if(cmd == `${prefix}helplvl2`){
+     if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816") {
+        let bicon = bot.displayAvatarURL;
+        message.channel.send(`<@${message.author.id}>, check your DM's`);
+        let botembed = new Discord.RichEmbed()
+        .setColor("#32b0ff")
+        .setTitle("TOP SECRET COMMANDS, DO NOT TELL ANYONE YOU HAVE ACCESS TO THESE COMMANDS!")
+        .setDescription("**Access level 2 commands:**")
+        .addField("`-commandban` `@user`", "bans @user from using commands of iFerg Bot")
+        .addField("`-commandunban` `@user`", "unbans @user from using commands of iFerg Bot")
+        .addField("`-blacklistword` `word`", "Blacklists the word given\n")
+        .addField("`-whitelistword` `word`", "Whitelists the word given\n")
+        .addField("`-nick` `@user` `nickname`", "Nicks the user to nickname provided")
+        .setThumbnail(bicon);
+        message.author.sendMessage(botembed);
+        return;
+        }
+    }
+ if(cmd == `${prefix}rolehelp` || cmd == `${prefix}helprole`) {
+        let bicon = bot.displayAvatarURL;
+        message.channel.send(`<@${message.author.id}>, check your DM's`);
+        let botembed = new Discord.RichEmbed()
+        .setColor("#32b0ff")
+        .setTitle("Role help")
+        .addField("Level 1", "Level one is given to trusted and active members  of the community\nTheir responibilities are to help new members and inform lvl 2s and 3s if the bot is abused or anything is happening/n")
+        .addField("Level 2", "Level 2 is given to the lvl 1 members that were really active, which helped the new players. Their responibilities are to make sure is not abused and watch over the chat.\n")
+        .addField("Level 3", "Level 3 is had by the people that helped and help develop the bot, that give ideas for the bot and that take decisions over the bot")
+        .setThumbnail(bicon);
+        message.author.send(botembed);
+        return;
+ }
+    //Level one is given to trusted and active members  of the community
 /*
  if(cmd == `${prefix}streamtime`) {
  	let bicon = bot.user.displayAvatarURL;

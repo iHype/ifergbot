@@ -438,20 +438,20 @@ return message.author.send("Please do not use the bot to say anything including 
     message.channel.send(botembed);
  }}
  if(cmd === `${prefix}gayrate`) {
-      if (args == "<@299495028756054016>" || message.mentions.members.first().id == "430447525800181762" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
+      if (message.mentions.members.first().id == "299495028756054016" || message.mentions.members.first().id == "430447525800181762" || message.mentions.members.first().id == "453970692266786816" || message.mentions.members.first().id == "424953131386798080" || message.mentions.members.first().id == "341602886935117835>" || message.mentions.members.first().id == "341602886935117835") {
      let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
     .setColor("#36393F")
     .setDescription(args + " is 0% gay. Always");
      message.channel.send(botembed);
-     return
-     }else if (args == "<@!440191033591070732>") {
+     return;
+     }else if (message.mentions.members.first().id == "440191033591070732") {
     let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
     .setColor("#36393F")
     .setDescription(args + " is 100% gay. Always");
      message.channel.send(botembed);
-     return
+     return;
        } else {
          
     let gayrateUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));

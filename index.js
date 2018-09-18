@@ -87,7 +87,7 @@ bot.on("message", async message => {
   if(cmd == `${prefix}commandunban`) {
    let userToUnban = message.mentions.members.first();
     let usertounbanid = userToUnban.id;
-  if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835"){
+  if(message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835"){
       var options = {
         files: './commandbans.txt',
         from: usertounbanid,
@@ -104,7 +104,7 @@ bot.on("message", async message => {
   }else {return message.channel.send(message.channel.author + ": no premission");}
   }
   if (cmd == `${prefix}commandban`) {
-  if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {
+  if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {
   let userToBan = message.mentions.members.first();
   let userToBanID = userToBan.id;
       if(userToBanID == "430447525800181762" || userToBanID == "299495028756054016") {
@@ -156,7 +156,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
 });
     }
     if(cmd === `${prefix}whitelistword`) {
-    if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id === "392235424413646848" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
+    if(message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id === "392235424413646848" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
         try{
     filter.removeWords(args.join(" ").toString());
         message.channel.send(message.author + ": succesfully whitelisted word(s): " + args);
@@ -187,7 +187,7 @@ message.author.sendFile('./log.txt');
   } }
   
   if(cmd === `${prefix}nick`) {
-  if(message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816" || message.author.id === "392235424413646848"){
+  if(message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816" || message.author.id === "392235424413646848"){
     let userNick = message.mentions.members.first();
 
     userNick.setNickname(translateArg.join(" ").toString())
@@ -331,9 +331,9 @@ if(cmd == `${prefix}translate`) {
      let botembed = new Discord.RichEmbed()
      .setTitle("Access ranks")
      .setColor("#00ff19")
-     .addField("Access level 3: ", "<@430447525800181762>\n<@299495028756054016>\n<@!453970692266786816>")
-     .addField("Access level 2:", "<@341602886935117835>")
-     .addField("Access level 1", "<@392235424413646848>\n<@!341602886935117835>\n<@!393412463153905675>\n<@437254213689540610>");
+     .addField("Access level 3: ", "<@430447525800181762>\n<@299495028756054016>\n<@453970692266786816>")
+     .addField("Access level 2:", "<@341602886935117835>\n<@415583155005685761>")
+     .addField("Access level 1", "<@392235424413646848>\n<@341602886935117835>\n<@393412463153905675>\n<@437254213689540610>");
      message.channel.send(botembed);
  }
     
@@ -438,7 +438,7 @@ return message.author.send("Please do not use the bot to say anything including 
     message.channel.send(botembed);
  }}
  if(cmd === `${prefix}gayrate`) {
-      if (args == "<@299495028756054016>" || args[0].id == "430447525800181762" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
+      if (args == "<@299495028756054016>" || message.mentions.members.first().id == "430447525800181762" || args == "<@453970692266786816>" || args == "<@!424953131386798080>" || args == "<@!341602886935117835>" || args == "<@341602886935117835>") {
      let botembed = new Discord.RichEmbed()
     .setTitle("Gayrate machine")
     .setColor("#36393F")

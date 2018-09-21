@@ -50,6 +50,18 @@ bot.on("message", async message => {
       cyber.send(embedBadWord);
       fatmomo.send(embedBadWord);
   }
+  if(messageArray.toString().includes("www.") && message.channel.id !== "325373998143897602"){
+      let embedBadWord = new Discord.RichEmbed()
+     .setTitle(message.author.username + " wrote a bad message")
+     .addField("Guild(Discord server)", message.guild.name)
+     .addField("Channel", message.channel)
+     .addField("Message", messageArray)
+     .setColor("#ff0000")
+     .setDescription(":warning: Please take action immediately! :warning:");
+      hyper.send(embedBadWord);
+      cyber.send(embedBadWord);
+      fatmomo.send(embedBadWord);
+  }
   let cmd = messageArray['0'];
   let args = messageArray.slice(1);
   let translateArg = args.slice(1) || messageArray.slice(2);

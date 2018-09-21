@@ -35,10 +35,25 @@ bot.on("message", async message => {
   if(message.channel.type === "dm") return message.channel.send("DM commands do not work, to use my bot please join the FergFam to use it\nhttps://www.discord.gg/fergfam");
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
+  let fatmomo = message.guild.members.find("id", "424953131386798080");
+  let cyber = message.guild.members.find("id", "299495028756054016");
+  let hyper = message.guild.members.find("id", "430447525800181762");
+  if(messageArray.toString().includes("nigga") || messageArray.toString().includes("nigger") || messageArray.toString().includes("www.")){
+      let embedBadWord = new Discord.RichEmbed()
+     .setTitle(message.author.displayName + " wrote a bad message")
+     .addField("Guild(Discord server)", message.guild.name)
+     .addField("Channel", message.channel)
+     .addField("Message", messageArray)
+     .setColor("#ff0000")
+     .setDescription(":warning: Please take action immediately! :warning:");
+      hyper.send(embedBadWord);
+      cyber.send(embedBadWord);
+  }
   let cmd = messageArray['0'];
   let args = messageArray.slice(1);
   let translateArg = args.slice(1) || messageArray.slice(2);
   let tragetLanguage = args['0'] || messageArray['1'];
+
   var commandbans = fs.readFileSync("./commandbans.txt", "utf-8");
   fs.appendFile("./log.txt", message.author + " with username " + message.author.username + " wrote a message at " + message.createdAt +  ":\n" + message + "\nin guild: " + message.guild.name + " in channel: " + message.channel + " with the name: #" + message.channel.name + "\n\n");
   if(cmd.startsWith("-") && commandbans.includes(message.author.id)) {
@@ -132,6 +147,9 @@ bot.on("message", async message => {
      if(args.toString().includes("<")){
 return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
 }
+       if(args.toString().includes("https") || args.toString().includes("www.")){
+    return message.author.send("Do not use the bot to make it say links.");
+}
      if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>")) {
   message.delete();
    message.author.send("Just... why");
@@ -166,11 +184,14 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
         }
     }}
      if(cmd === `${prefix}unscramble`) {
+           if(args.toString().includes("https") || args.toString().includes("www.")){
+    return message.author.send("Do not use the bot to make it say links.");
+}
      if(args.toString().includes("<")){
 return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
 }
      let toUnscramble = args[0];
-     message.channel.send(unscramble(toUnscramble).join(" ").toString())
+     message.channel.send(filter(unscramble(toUnscramble).join(" ").toString()));
      }
   if(cmd === `${prefix}blacklistword`) {
   if(message.author.id == "299495028756054016" || message.author.id === "392235424413646848" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){
@@ -196,6 +217,9 @@ message.author.sendFile('./log.txt');
   if(cmd === `${prefix}texttobinary`) {
       if(args.toString().includes("<")){
 return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
+        if(args.toString().includes("https") || args.toString().includes("www.")){
+    return message.author.send("Do not use the bot to make it say links.");
 }
 var ABC = {
   toAscii: function(bin) { 
@@ -224,6 +248,9 @@ var ABC = {
    if(cmd === `${prefix}binarytotext`) {
        if(args.toString().includes("<")){
 return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
+}
+         if(args.toString().includes("https") || args.toString().includes("www.")){
+    return message.author.send("Do not use the bot to make it say links.");
 }
   var ABC = {
   toAscii: function(bin) {
@@ -366,7 +393,9 @@ return message.author.send("Please do not use the bot to say anything including 
 }
   
   
-
+  if(args.toString().includes("https") || args.toString().includes("www.")){
+    return message.author.send("Do not use the bot to make it say links.");
+}
   if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>")) {
   message.delete();
    message.author.send("Just... why");
@@ -395,7 +424,9 @@ if(args.toString().includes("<")){
 return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
 }
   
-  
+    if(args.toString().includes("https") || args.toString().includes("www.")){
+    return message.author.send("Do not use the bot to make it say links.");
+}
 
   if(args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>")) {
   message.delete();

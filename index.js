@@ -48,6 +48,7 @@ bot.on("message", async message => {
      .setDescription(":warning: Please take action immediately! :warning:");
       hyper.send(embedBadWord);
       cyber.send(embedBadWord);
+      fatmomo.send(embedBadWord);
   }
   let cmd = messageArray['0'];
   let args = messageArray.slice(1);

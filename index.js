@@ -40,7 +40,7 @@ bot.on("message", async message => {
   let hyper = message.guild.members.find("id", "430447525800181762");
   if(messageArray.toString().includes("nigga") || messageArray.toString().includes("nigger") || messageArray.toString().includes("www.")){
       let embedBadWord = new Discord.RichEmbed()
-     .setTitle(message.author.displayName + " wrote a bad message")
+     .setTitle(message.author.username + " wrote a bad message")
      .addField("Guild(Discord server)", message.guild.name)
      .addField("Channel", message.channel)
      .addField("Message", messageArray)

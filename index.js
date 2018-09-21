@@ -51,7 +51,7 @@ bot.on("message", async message => {
       fatmomo.send(embedBadWord);
   }
   if(messageArray.toString().includes("www.") || messageArray.toString().includes("http")){
-      if(message.channel.toString() !=== "<#325373998143897602>"){
+      if(message.channel.toString() !== "<#325373998143897602>"){
       let embedBadWord = new Discord.RichEmbed()
      .setTitle(message.author.username + " wrote a bad message")
      .addField("Guild(Discord server)", message.guild.name)

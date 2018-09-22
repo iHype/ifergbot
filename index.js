@@ -40,7 +40,6 @@ bot.on("message", async message => {
   let hyper = message.guild.members.find("id", "430447525800181762");
   let ibrahimKhalid = message.guild.members.find("id", "453970692266786816");
   if(messageArray.toString().includes("nigga") || messageArray.toString().includes("nigger")){
-     if(message.author.hasPermission("BAN_MEMBERS")) return;
       let embedBadWord = new Discord.RichEmbed()
      .setTitle(message.author.username + " wrote a bad message")
      .addField("Guild(Discord server)", message.guild.name)
@@ -57,7 +56,6 @@ bot.on("message", async message => {
       ibrahimKhalid.send(embedBadWord);
   }
   if(messageArray.toString().includes("www.") || messageArray.toString().includes("http") || messageArray.toString().includes(".com") || messageArray.toString().includes(".gg") || messageArray.toString().includes(".be")){
-      if(message.author.hasPermission("BAN_MEMBERS")) return;
       if(message.channel.id === "325373998143897602") return;
       if(message.channel.id === "492983540959674389") return;
       let embedLink = new Discord.RichEmbed()

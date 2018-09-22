@@ -38,8 +38,10 @@ bot.on("message", async message => {
   let fatmomo = message.guild.members.find("id", "424953131386798080");
   let cyber = message.guild.members.find("id", "299495028756054016");
   let hyper = message.guild.members.find("id", "430447525800181762");
+  let lol = message.guild.members.get(message.author);
   let ibrahimKhalid = message.guild.members.find("id", "453970692266786816");
   if(ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger")){
+      if(lol.hasPermission("BAN_MEMBERS")){ return;}
       let embedBadWord = new Discord.RichEmbed()
      .setTitle(message.author.username + " wrote a bad message")
      .addField("Guild(Discord server)", message.guild.name)
@@ -56,6 +58,7 @@ bot.on("message", async message => {
   }
   if(ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be")){
       if(message.channel.id === "325373998143897602") return;
+      if(lol.hasPermission("BAN_MEMBERS")){ return;}
       if(message.channel.id === "492983540959674389") return;
       let embedLink = new Discord.RichEmbed()
      .setTitle(message.author.username + " wrote a bad message")

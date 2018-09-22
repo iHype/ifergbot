@@ -46,8 +46,7 @@ bot.on("message", async message => {
      .addField("Channel", message.channel)
      .addField("Message", messageArray)
      .setColor("#ff0000")
-     .footer("This message has been deleted! Please go and investigate the situation!")
-     .setDescription(":warning: Please take action immediately! :warning:");
+     .setDescription(":warning: Please take action immediately! :warning:\nThis message has been deleted! Please go and investigate the situation!");
       message.channel.send(message.author + ": please do not say that kind of word(s)!");
       message.delete(250);
       hyper.send(embedBadWord);
@@ -64,8 +63,7 @@ bot.on("message", async message => {
      .addField("Channel", message.channel)
      .addField("Message", messageArray)
      .setColor("#ff0000")
-     .footer("This message has been deleted! Please go and investigate the situation!")
-     .setDescription(":warning: Please take action immediately! :warning:");
+     .setDescription(":warning: Please take action immediately! :warning:\nThis message has been deleted! Please go and investigate the situation!");
       message.channel.send(message.author + ": do not post links here please!\nUse <#325373998143897602> for posting links");
       message.delete(250);
       hyper.send(embedLink);

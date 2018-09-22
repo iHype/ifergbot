@@ -216,7 +216,7 @@ translate(translateArg + "", {to: tragetLanguage + ""}).then(res => {
 return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
 }
      let toUnscramble = args[0];
-     message.channel.send(filter(unscramble(toUnscramble).join(" ").toString()));
+     message.channel.send(filter.clean(unscramble(toUnscramble).join(" ").toString()));
      }
   if(cmd === `${prefix}blacklistword`) {
   if(message.author.id == "299495028756054016" || message.author.id === "392235424413646848" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816"){

@@ -27,9 +27,9 @@ bot.on("ready", async ready => {
   .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
 })
 bot.on("message", async message => {
-  /*  if(message.guild.id === "282275654760660993") {
+      if(message.guild.id === "282275654760660993") {
         return;
-        } */
+        } 
   var logs = fs.readFileSync("./log.txt", "utf-8");
   if(message.author.bot) return;
   if(message.channel.type === "dm") return message.channel.send("DM commands do not work, to use my bot please join the FergFam to use it\nhttps://www.discord.gg/fergfam");
@@ -38,31 +38,43 @@ bot.on("message", async message => {
   let fatmomo = message.guild.members.find("id", "424953131386798080");
   let cyber = message.guild.members.find("id", "299495028756054016");
   let hyper = message.guild.members.find("id", "430447525800181762");
-  if(messageArray.toString().includes("nigga") || messageArray.toString().includes("nigger") || messageArray.toString().includes("www.")){
+  let ibrahimKhalid = message.guild.members.find("id", "453970692266786816");
+  if(messageArray.toString().includes("nigga") || messageArray.toString().includes("nigger")){
+     if(message.author.hasPermission("BAN_MEMBERS")) return;
       let embedBadWord = new Discord.RichEmbed()
      .setTitle(message.author.username + " wrote a bad message")
      .addField("Guild(Discord server)", message.guild.name)
      .addField("Channel", message.channel)
      .addField("Message", messageArray)
      .setColor("#ff0000")
+     .footer("This message has been deleted! Please go and investigate the situation!")
      .setDescription(":warning: Please take action immediately! :warning:");
+      message.channel.send(message.author + ": please do not say that kind of word(s)!");
+      message.delete(250);
       hyper.send(embedBadWord);
       cyber.send(embedBadWord);
       fatmomo.send(embedBadWord);
+      ibrahimKhalid.send(embedBadWord);
   }
-  if(messageArray.toString().includes("www.") || messageArray.toString().includes("http")){
-      if(message.channel.toString() !== "<#325373998143897602>"){
-      let embedBadWord = new Discord.RichEmbed()
+  if(messageArray.toString().includes("www.") || messageArray.toString().includes("http") || messageArray.toString().includes(".com") || messageArray.toString().includes(".gg") || messageArray.toString().includes(".be")){
+      if(message.author.hasPermission("BAN_MEMBERS")) return;
+      if(message.channel.id === "325373998143897602") return;
+      if(message.channel.id === "492983540959674389") return;
+      let embedLink = new Discord.RichEmbed()
      .setTitle(message.author.username + " wrote a bad message")
      .addField("Guild(Discord server)", message.guild.name)
      .addField("Channel", message.channel)
      .addField("Message", messageArray)
      .setColor("#ff0000")
+     .footer("This message has been deleted! Please go and investigate the situation!")
      .setDescription(":warning: Please take action immediately! :warning:");
-      hyper.send(embedBadWord);
-      cyber.send(embedBadWord);
-      fatmomo.send(embedBadWord);
-  }}
+      message.channel.send(message.author + ": do not post links here please!\nUse <#325373998143897602> for posting links");
+      message.delete(250);
+      hyper.send(embedLink);
+      cyber.send(embedLink);
+      fatmomo.send(embedLink);
+      ibrahimKhalid.send(embedLink);
+  }
   let cmd = messageArray['0'];
   let args = messageArray.slice(1);
   let translateArg = args.slice(1) || messageArray.slice(2);

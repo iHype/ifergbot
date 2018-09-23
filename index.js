@@ -60,6 +60,7 @@ bot.on("message", async message => {
       if(message.channel.id === "325373998143897602") return;
       if(lol.hasPermission("BAN_MEMBERS")){ return;}
       if(message.channel.id === "492983540959674389") return;
+      if(message.channel.id === "334870578748063745") return;
       let embedLink = new Discord.RichEmbed()
      .setTitle(message.author.username + " wrote a bad message")
      .addField("Guild(Discord server)", message.guild.name)

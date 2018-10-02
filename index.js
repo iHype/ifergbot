@@ -344,7 +344,11 @@ return message.author.send("Please do not use the bot to say anything including 
   if (cmd == "<@481524871038369803>" || cmd == "<@!481524871038369803>") {
    return message.channel.send(message.author + " no u");
   }
-  
+  if(cmd == `${prefix}givesponsor` && message.author.id === "430447525800181762") {
+    let sponsorRoleID = message.guild.roles.find("id", "348156399811035167").id
+    let lol = message.mentions.members.first().id
+    lol.addRole(sponsorRoleID)
+  }
     if(cmd == `${prefix}unban` && message.author.id == "430447525800181762") {
     try {
     let ubUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));

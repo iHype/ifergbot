@@ -346,7 +346,7 @@ return message.author.send("Please do not use the bot to say anything including 
   }
   if(cmd == `${prefix}givesponsor` && message.author.id === "430447525800181762") {
     let sponsorRoleID = message.guild.roles.find("id", "348156399811035167").id
-    let lol = message.mentions.members.first().id
+    let lol = message.mentions.members.first()
     lol.addRole(sponsorRoleID)
   }
     if(cmd == `${prefix}unban` && message.author.id == "430447525800181762") {

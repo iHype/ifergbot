@@ -58,7 +58,7 @@ bot.on("message", async message => {
   }
   if(ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be")){
       if(message.channel.id === "325373998143897602") return;
-      if(lol.hasPermission("BAN_MEMBERS")){ return;}
+      if(lol.hasPermission("BAN_MEMBERS")) return;
       if(message.channel.id === "492983540959674389") return;
       if(message.channel.id === "334870578748063745") return;
       if(message.channel.id === "439852376975736852") return;
@@ -69,7 +69,7 @@ bot.on("message", async message => {
      .addField("Message", messageArray)
      .setColor("#ff0000")
      .setDescription(":warning: Please take action immediately! :warning:\nThis message has been deleted! Please go and investigate the situation!");
-      message.channel.send(message.author + ": do not post links here please!\nUse <#325373998143897602> for posting links");
+      message.channel.send(message.author + ": do not post links here please!\nUse <#325373998143897602> for posting links").then(async a => {await a.delete(5000)})
       message.delete(250);
       hyper.send(embedLink);
       cyber.send(embedLink);

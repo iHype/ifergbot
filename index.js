@@ -312,7 +312,7 @@ return message.author.send("Please do not use the bot to say anything including 
         message.channel.send(filter.clean(binaryToText)); }
         
           if(cmd == `${prefix}mute`) {
-    if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
+    if(message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS")) {
   let mUser =  message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!mUser) {return}
   let muterole = message.guild.roles.find('name', "muted");

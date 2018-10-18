@@ -218,6 +218,7 @@ bot.on("message", async message => {
     if(cmd === `${prefix}trackfortnite`){
         let name = args[0]
         let platform = args[1]
+        if(platform !== "xbl" || platform !== "pc" || platform !== "psn") return message.channel.send(message.author + ", please only use xbl, pc or psn as platform");
         var fortniteoptions = {
             url: `https://api.fortnitetracker.com/v1/profile/${platform}/${name}`,
             headers: {

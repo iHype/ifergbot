@@ -225,8 +225,8 @@ bot.on("message", async message => {
             }
         };
         function callback(error, response, body) {
-            if (!error && response.statusCode == 200) {
-                var info = JSON.parse(body);
+            var info = JSON.parse(body);
+            if (!info.error && response.statusCode == 200) {
                 let embedFortnite = new Discord.RichEmbed()
                 .setTitle(`Stats of ${name} on ${platform}`)
                 .addField(`${info.lifeTimeStats[0].key}`, `${info.lifeTimeStats[0].value}`)
@@ -243,6 +243,7 @@ bot.on("message", async message => {
                 .addField(`${info.lifeTimeStats[11].key}`, `${info.lifeTimeStats[11].value}`)
                  message.channel.send(embedFortnite)
             }
+            if(info.error) return message.channel.send(info.error)
         }
         request(fortniteoptions, callback)
     }

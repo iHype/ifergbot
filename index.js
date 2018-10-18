@@ -225,13 +225,12 @@ bot.on("message", async message => {
             }
         };
         function callback(error, response, body) {
-            if (!error && response.statusCode == 200) {
                 var info = JSON.parse(body);
                 let embedFortnite = new Discord.RichEmbed()
                 .setTitle(`Stats of ${name} on ${platform}`)
-                .setDescription(`**Matches played: ${info.lifeTimeStats[7].value}**`);
-                message.channel.send(embedFortnite)
-            }
+               .setDescription(`**Matches played: ${info.lifeTimeStats[7].value}**`);
+            message.channel.send(embedFortnite)
+            
         }
     }
     

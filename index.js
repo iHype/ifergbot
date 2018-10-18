@@ -231,6 +231,7 @@ bot.on("message", async message => {
                 if (!info.error && response.statusCode == 200) {
                     let embedFortnite = new Discord.RichEmbed()
                         .setTitle(`Stats of ${name} on ${platform}`)
+                        .setColor('#0094ff')
                         .addField(`${info.lifeTimeStats[0].key}`, `${info.lifeTimeStats[0].value}`, true)
                         .addField(`${info.lifeTimeStats[1].key}`, `${info.lifeTimeStats[1].value}`, true)
                         .addField(`${info.lifeTimeStats[2].key}`, `${info.lifeTimeStats[2].value}\n`, true)

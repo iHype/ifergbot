@@ -15,7 +15,8 @@
 		"unscramble": "0.0.2-r",
 		"fortnite": "4.1.1",
 		"define-it": "0.0.2",
-		"ms": "2.1.1"
+		"ms": "2.1.1",
+		"request": "2.88.0"
   },
 	"scripts": {
 		"start": "node index.js"

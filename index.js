@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig.json");
 const ms = require("ms");
+var request = require('request')
 var define = require('define-it').definitions;
 const ci = require('case-insensitive');
 const Client = require('fortnite');
@@ -214,6 +215,25 @@ bot.on("message", async message => {
 
         return
     }
+    if(cmd === `${prefix}trackfortnite`){
+        let name = args[0]
+        let platform = args[1]
+        var fortniteoptions = {
+            url: `https://api.fortnitetracker.com/v1/profile/${platform}/${name}`,
+            headers: {
+                'TRN-Api-Key': process.env.fortnite
+            }
+        };
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                var info = JSON.parse(body);
+                let embedFortnite = new Discord.RichEmbed()
+                .setTitle(`Stats of ${name} on ${platform}`)
+                .setDescription(`**Matches played: ${info.lifeTimeStats[7].value}**`)
+            }
+        }
+    }
+    
     if (cmd === `${prefix}define`) {
         let wordToDefine = args[0];
         define(wordToDefine, function(err, res) {

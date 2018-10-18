@@ -242,7 +242,7 @@ bot.on("message", async message => {
                         .addField(`${info.lifeTimeStats[7].key}`, `${info.lifeTimeStats[7].value}\n`)
                         .addField(`${info.lifeTimeStats[8].key}`, `${info.lifeTimeStats[8].value}`, true)
                         .addField(`${info.lifeTimeStats[9].key}`, `${info.lifeTimeStats[9].value}\n`, true)
-                        .addField(`${info.lifeTimeStats[10].key}`, `\n${info.lifeTimeStats[10].value}`, true)
+                        .addField(`${info.lifeTimeStats[10].key}`, `\n${info.lifeTimeStats[10].value}`)
                         .addField(`${info.lifeTimeStats[11].key}`, `${info.lifeTimeStats[11].value}`, true)
                     message.channel.send(embedFortnite)
                 }

@@ -215,40 +215,42 @@ bot.on("message", async message => {
 
         return
     }
-    if(cmd === `${prefix}trackfortnite`){
-        let name = args[0]
-        let platform = args[1]
-        if(platform !== "xbl" || platform !== "pc" || platform !== "psn") return message.channel.send(message.author + ", please only use xbl, pc or psn as platform");
-        var fortniteoptions = {
-            url: `https://api.fortnitetracker.com/v1/profile/${platform}/${name}`,
-            headers: {
-                'TRN-Api-Key': process.env.FORTNITETRACKER
+    if (cmd === `${prefix}trackfortnite`) {
+        if (args[1] === "pc" || args[1] === "xbl" || args[1] === "psn") {
+            let name = args[0]
+            let platform = args[1]
+            var fortniteoptions = {
+                url: `https://api.fortnitetracker.com/v1/profile/${platform}/${name}`,
+                headers: {
+                    'TRN-Api-Key': process.env.FORTNITETRACKER
+                }
+            };
+
+            function callback(error, response, body) {
+                var info = JSON.parse(body);
+                if (!info.error && response.statusCode == 200) {
+                    let embedFortnite = new Discord.RichEmbed()
+                        .setTitle(`Stats of ${name} on ${platform}`)
+                        .addField(`${info.lifeTimeStats[0].key}`, `${info.lifeTimeStats[0].value}`, true)
+                        .addField(`${info.lifeTimeStats[1].key}`, `${info.lifeTimeStats[1].value}`, true)
+                        .addField(`${info.lifeTimeStats[2].key}`, `${info.lifeTimeStats[2].value}\n`, true)
+                        .addField(`${info.lifeTimeStats[3].key}`, `${info.lifeTimeStats[3].value}`, true)
+                        .addField(`${info.lifeTimeStats[4].key}`, `${info.lifeTimeStats[4].value}`, true)
+                        .addField(`${info.lifeTimeStats[5].key}`, `${info.lifeTimeStats[5].value}`, true)
+                        .addField(`${info.lifeTimeStats[6].key}`, `${info.lifeTimeStats[6].value}`)
+                        .addField(`${info.lifeTimeStats[7].key}`, `${info.lifeTimeStats[7].value}\n`)
+                        .addField(`${info.lifeTimeStats[8].key}`, `${info.lifeTimeStats[8].value}`, true)
+                        .addField(`${info.lifeTimeStats[9].key}`, `${info.lifeTimeStats[9].value}`, true)
+                        .addField(`${info.lifeTimeStats[10].key}`, `${info.lifeTimeStats[10].value}`, true)
+                        .addField(`${info.lifeTimeStats[11].key}`, `${info.lifeTimeStats[11].value}`, true)
+                    message.channel.send(embedFortnite)
+                }
+                if (info.error) return message.channel.send(info.error)
             }
-        };
-        function callback(error, response, body) {
-            var info = JSON.parse(body);
-            if (!info.error && response.statusCode == 200) {
-                let embedFortnite = new Discord.RichEmbed()
-                .setTitle(`Stats of ${name} on ${platform}`)
-                .addField(`${info.lifeTimeStats[0].key}`, `${info.lifeTimeStats[0].value}`, true)
-                .addField(`${info.lifeTimeStats[1].key}`, `${info.lifeTimeStats[1].value}`, true)
-                .addField(`${info.lifeTimeStats[2].key}`, `${info.lifeTimeStats[2].value}\n`, true)
-                .addField(`${info.lifeTimeStats[3].key}`, `${info.lifeTimeStats[3].value}`, true)
-                .addField(`${info.lifeTimeStats[4].key}`, `${info.lifeTimeStats[4].value}`, true)
-                .addField(`${info.lifeTimeStats[5].key}`, `${info.lifeTimeStats[5].value}`, true)
-                .addField(`${info.lifeTimeStats[6].key}`, `${info.lifeTimeStats[6].value}`)
-                .addField(`${info.lifeTimeStats[7].key}`, `${info.lifeTimeStats[7].value}\n`)
-                .addField(`${info.lifeTimeStats[8].key}`, `${info.lifeTimeStats[8].value}`,true)
-                .addField(`${info.lifeTimeStats[9].key}`, `${info.lifeTimeStats[9].value}`, true)
-                .addField(`${info.lifeTimeStats[10].key}`, `${info.lifeTimeStats[10].value}`, true)
-                .addField(`${info.lifeTimeStats[11].key}`, `${info.lifeTimeStats[11].value}`, true)
-                 message.channel.send(embedFortnite)
-            }
-            if(info.error) return message.channel.send(info.error)
+            request(fortniteoptions, callback)
         }
-        request(fortniteoptions, callback)
     }
-    
+
     if (cmd === `${prefix}define`) {
         let wordToDefine = args[0];
         define(wordToDefine, function(err, res) {

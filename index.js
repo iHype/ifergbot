@@ -116,12 +116,12 @@ bot.on("message", async message => {
         return message.author.sendMessage("Check https://cloud.google.com/translate/docs/languages for language codes.");
     }
 
-    if (cmd == `${prefix}fortnitetrack`) {
+    /*if (cmd == `${prefix}fortnitetrack`) {
         let platform = args[0]
         let fortniteTracked = args[1];
         let fortnitetrack = fortnite.user(fortniteTracked, platform);
         message.channel.send(fortnitetrack);
-    }
+    }*/
     if (cmd == `${prefix}banlist`) {
         let bannedUsers = commandbans.toString();
         message.channel.send("These are the **id's** of the current banned members from using iFerg Bot\n" + bannedUsers);
@@ -229,7 +229,8 @@ bot.on("message", async message => {
                 var info = JSON.parse(body);
                 let embedFortnite = new Discord.RichEmbed()
                 .setTitle(`Stats of ${name} on ${platform}`)
-                .setDescription(`**Matches played: ${info.lifeTimeStats[7].value}**`)
+                .setDescription(`**Matches played: ${info.lifeTimeStats[7].value}**`);
+                message.channel.send(embedFortnite)
             }
         }
     }

@@ -221,7 +221,7 @@ bot.on("message", async message => {
         var fortniteoptions = {
             url: `https://api.fortnitetracker.com/v1/profile/${platform}/${name}`,
             headers: {
-                'TRN-Api-Key': process.env.fortnite
+                'TRN-Api-Key': process.env.FORTNITETRACKER
             }
         };
         function callback(error, response, body) {

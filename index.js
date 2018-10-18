@@ -248,6 +248,8 @@ bot.on("message", async message => {
                 if (info.error) return message.channel.send(info.error)
             }
             request(fortniteoptions, callback)
+        } else {
+            message.channel.send(message.author + ", please only use `pc`, `xbl` or `psn` as `platform`.")
         }
     }
 

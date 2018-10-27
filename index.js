@@ -24,7 +24,7 @@ const bot = new Discord.Client({
     disableEveryone: true
 });
 bot.commands = new Discord.Collection();
-
+let sugest = {}
 
 bot.on("ready", async ready => {
     console.log("Bot ready") //;
@@ -79,7 +79,7 @@ bot.on("message", async message => {
             .setColor("#ff0000")
             .setDescription(":warning: Please take action immediately! :warning:\nThis message has been deleted! Please go and investigate the situation!");
         message.channel.send(message.author + ": do not post links here please!\nUse <#325373998143897602> for posting links").then(async a => {
-            await a.delete(5000)
+            await a.delete(7500)
         })
         message.delete(250);
         hyper.send(embedLink);
@@ -99,7 +99,11 @@ bot.on("message", async message => {
         message.author.send(message.author + ": you have been banned from using commands of this bot\nTo regain access please DM <@430447525800181762>, <@299495028756054016>, <@453970692266786816> or any of the Mods/Admins of Ferg.");
         return;
     }
-
+    if(!sugest[message.author.id]) {
+        sugest[message.author.id] = {
+            suggested: 0
+        }
+    }
 
 
     if (cmd == `${prefix}unmute`) {
@@ -162,6 +166,7 @@ bot.on("message", async message => {
         }
     }
     if (cmd === `${prefix}suggest`) {
+        if(sugest[message.author.id].suggested === 1) return message.channel.send(message.author + ", Please only suggest something every 30 seconds")
         var suggestion = args.join(" ").toString()
         var suggestEmbed = new Discord.RichEmbed()
         .setTitle(message.member.displayName + " has a suggestion!")
@@ -170,6 +175,8 @@ bot.on("message", async message => {
         .setColor("#00ff37")
         .addField("Suggestion:", suggestion);
         await message.delete(500)
+        sugest[message.author.id].suggested = 1
+        setTimeout(async function() {sugest[message.author.id].suggested = 0}, ms("30s"))
         message.author.send("Thanks for your suggestion!\nThis is how your suggestion looks like for iFerg Bot creators\n")
         await message.author.send(suggestEmbed)
         hyper.send(suggestEmbed)

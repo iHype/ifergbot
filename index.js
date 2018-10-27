@@ -166,7 +166,7 @@ bot.on("message", async message => {
         }
     }
     if (cmd === `${prefix}suggest`) {
-        if(sugest[message.author.id].suggested === 1) return message.channel.send(message.author + ", Please only suggest something every 30 seconds")
+        if(sugest[message.author.id].suggested === 1) return message.channel.send(message.author + ", Please only suggest something every 30 seconds").then(async a => {a.delete(ms("5s"))})
         var suggestion = args.join(" ").toString()
         var suggestEmbed = new Discord.RichEmbed()
         .setTitle(message.member.displayName + " has a suggestion!")

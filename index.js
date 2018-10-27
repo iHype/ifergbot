@@ -167,7 +167,8 @@ bot.on("message", async message => {
         .setTitle(message.member.displayName + " has a suggestion!")
         .addField("Member suggesting:", `${message.author}\n(${message.member.displayName})`)
         .addField("Suggestion:", suggestion);
-        message.author.send("Thanks for your suggestion!\nThis is how your suggestion looks like for iFerg Bot creators\n" + suggestEmbed)
+        message.author.send("Thanks for your suggestion!\nThis is how your suggestion looks like for iFerg Bot creators\n")
+        message.author.send(suggestEmbed)
         hyper.send(suggestEmbed)
         cyber.send(suggestEmbed)
         ibrahimKhalid.send(suggestEmbed)

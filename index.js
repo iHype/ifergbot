@@ -40,7 +40,7 @@ bot.on("message", async message => {
     var logs = fs.readFileSync("./log.txt", "utf-8");
     if (message.author.bot) return;
     if (message.channel.type === "dm") return message.channel.send("DM commands do not work, to use my bot please join the FergFam to use it\nhttps://www.discord.gg/fergfam");
-    let prefix = botconfig.prefix;
+    var prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let fatmomo = message.guild.members.find("id", "424953131386798080");
     let cyber = message.guild.members.find("id", "299495028756054016");
@@ -160,6 +160,17 @@ bot.on("message", async message => {
         } else {
             return message.channel.send(message.channel.author + ": no premission");
         }
+    }
+    if (cmd === `${prefix}suggest`) {
+        var suggestion = args.join(" ").toString()
+        var suggestEmbed = new Discord.RichEmbed()
+        .setTitle(message.member.displayName + " has a suggestion!")
+        .addField("Member suggesting:", `${message.author}\n(${message.member.displayName})`)
+        .addField("Suggestion:", suggestion);
+        message.author.send("Thanks for your suggestion!\nThis is how your suggestion looks like for iFerg Bot creators\n" + suggestEmbed)
+        hyper.send(suggestEmbed)
+        cyber.send(suggestEmbed)
+        ibrahimKhalid.send(suggestEmbed)
     }
     if (cmd == `${prefix}commandban`) {
         if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {

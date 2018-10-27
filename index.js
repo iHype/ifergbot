@@ -660,6 +660,7 @@ bot.on("message", async message => {
         let botembed = new Discord.RichEmbed()
             .setColor("#32b0ff")
             .addField("`-help`", "shows this help message containing all commands\n")
+            .addField("`-suggest` `your suggestion`", "Suggest anything to change/add for iFerg Bot. If this suggestion is a good one you will be in the credits.")
             .addField("`-trackfortnite` `player` `platform`", "Requests lifetime stats from `player` from `platform` using Fortnite Tracker")
             .addField("`-binarytotext` `01110100 01100101 01111000 01110100`", "tranlsates the binary provided into readable words/sentences")
             .addField("`-texttobinary` `text`", "translates the provided text to binary")

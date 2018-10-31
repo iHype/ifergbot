@@ -431,7 +431,13 @@ bot.on("message", async message => {
             }, ms(args[1]))
         }
     }
-
+    if(cmd === `${prefix}fixmute` && message.author.id === 430447525800181762) {
+        let muterole = message.guild.roles.find('name', "muted");
+        message.channel.overwritePermissions(muterole, {
+                            SEND_MESSAGES: false,
+                            ADD_REACTIONS: false
+                        });
+    }
 
     if (cmd == "<@481524871038369803>" || cmd == "<@!481524871038369803>") {
         return message.channel.send(message.author + " no u");

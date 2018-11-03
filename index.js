@@ -94,7 +94,7 @@ bot.on("message", async message => {
     let tragetLanguage = args['0'] || messageArray['1'];
 
     var commandbans = fs.readFileSync("./commandbans.txt", "utf-8");
-    fs.appendFile("./log.txt", message.author + " with username " + message.author.username + " wrote a message at " + message.createdAt + ":\n" + message + "\nin guild: " + message.guild.name + " in channel: " + message.channel + " with the name: #" + message.channel.name + "\n\n");
+    fs.appendFile("./log.txt", message.author + " with username " + message.author.username + " wrote a message at " + message.createdAt + ":\n" + message + "\nin guild: " + message.guild.name + " in channel: " + message.channel + " with the name: #" + message.channel.name + "\n\n", (err) => {if(err){console.log(err)}});
     if (cmd.startsWith("-") && commandbans.includes(message.author.id)) {
         message.delete();
         message.author.send(message.author + ": you have been banned from using commands of this bot\nTo regain access please DM <@430447525800181762>, <@299495028756054016>, <@453970692266786816> or any of the Mods/Admins of Ferg.");

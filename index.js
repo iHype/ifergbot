@@ -195,7 +195,7 @@ bot.on("message", async message => {
                 return message.channel.send("Couldn't find user.");
             }
             try {
-                fs.appendFile("./commandbans.txt", userToBanID + "\n", (err) => {hyper.send(err)})
+                fs.appendFile("./commandbans.txt", userToBanID + "\n", (err) => {})
                 message.channel.send("Successfully added " + userToBan + " to the banned list.");
             } catch (err) {
                 console.log(err)

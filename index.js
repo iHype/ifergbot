@@ -66,7 +66,7 @@ bot.on("message", async message => {
         fatmomo.send(embedBadWord);
         ibrahimKhalid.send(embedBadWord);*/
     }
-    if (ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be")) {
+    if (ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be") || ci(messageArray.toString()).includes(".io")) {
         if (message.channel.id === "325373998143897602") return;
         if (lol.hasPermission("BAN_MEMBERS")) return;
         if (message.channel.id === "492983540959674389") return;

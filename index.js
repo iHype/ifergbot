@@ -59,12 +59,12 @@ bot.on("message", async message => {
             .addField("Message", messageArray)
             .setColor("#ff0000")
             .setDescription(":warning: Please take action immediately! :warning:\nThis message has been deleted! Please go and investigate the situation!");
-        message.channel.send(message.author + ": please do not say that kind of word(s)!");
+        message.channel.send(message.author + ": please do not say that kind of word(s)!").then(async a => {a.delete(5000)})
         message.delete(250);
-        hyper.send(embedBadWord);
+        /*hyper.send(embedBadWord);
         cyber.send(embedBadWord);
         fatmomo.send(embedBadWord);
-        ibrahimKhalid.send(embedBadWord);
+        ibrahimKhalid.send(embedBadWord);*/
     }
     if (ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be")) {
         if (message.channel.id === "325373998143897602") return;
@@ -84,10 +84,10 @@ bot.on("message", async message => {
             await a.delete(7500)
         })
         message.delete(250);
-        hyper.send(embedLink);
+        /*hyper.send(embedLink);
         cyber.send(embedLink);
         fatmomo.send(embedLink);
-        ibrahimKhalid.send(embedLink);
+        ibrahimKhalid.send(embedLink);*/
     }
     let cmd = messageArray['0'];
     let args = messageArray.slice(1);

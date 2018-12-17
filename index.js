@@ -49,9 +49,9 @@ bot.on("message", async message => {
     let lol = message.guild.members.find("id", message.author.id);
     let ibrahimKhalid = message.guild.members.find("id", "453970692266786816");
     if (ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger")) {
-        if (lol.hasPermission("BAN_MEMBERS")) {
+        /*if (lol.hasPermission("BAN_MEMBERS")) {
             return;
-        }
+        }*/
         let embedBadWord = new Discord.RichEmbed()
             .setTitle(message.author.username + " wrote a bad message")
             .addField("Guild(Discord server)", message.guild.name)

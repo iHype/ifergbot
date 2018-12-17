@@ -48,10 +48,10 @@ bot.on("message", async message => {
     let hyper = message.guild.members.find("id", "430447525800181762");
     let lol = message.guild.members.find("id", message.author.id);
     let ibrahimKhalid = message.guild.members.find("id", "453970692266786816");
-    if (ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger")) {
-        /*if (lol.hasPermission("BAN_MEMBERS")) {
+    if (ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger") || ci(messageArray.toString()).includes("nig") || ci(messageArray.toString()).includes("fuck") || ci(messageArray.toString()).includes("fucker") || ci(messageArray.toString()).includes("cunt") || ci(messageArray.toString()).includes("fag") || ci(messageArray.toString()).includes("faggot") || ci(messageArray.toString()).includes("asshole")) {
+        if (lol.hasPermission("KICK_MEMBERS") || lol.highestRole.id === "333690877044064259") {
             return;
-        }*/
+        }
         let embedBadWord = new Discord.RichEmbed()
             .setTitle(message.author.username + " wrote a bad message")
             .addField("Guild(Discord server)", message.guild.name)

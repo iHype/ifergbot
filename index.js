@@ -489,7 +489,7 @@ bot.on("message", async message => {
          message.channel.send(message.author + " no u");
      }
     */
-    if (cmd === `${prefix}credits`) {
+    /*if (cmd === `${prefix}credits`) {
         let botembed = new Discord.RichEmbed()
             .setTitle("Access ranks")
             .setColor("#00ff19")
@@ -497,7 +497,7 @@ bot.on("message", async message => {
             .addField("Access level 2:", "<@341602886935117835>\n<@415583155005685761>")
             .addField("Access level 1", "<@392235424413646848>\n<@341602886935117835>\n<@393412463153905675>\n<@437254213689540610>");
         message.channel.send(botembed);
-    }
+    }*/
 
     if (cmd === `${prefix}fixyt` && message.author.id === "430447525800181762") {
         let fixit = message.guild.roles.find('name', "Youtuber/Streamer/Pro Player");
@@ -684,7 +684,7 @@ bot.on("message", async message => {
         message.author.sendMessage(botembed);
         return;
     }
-    if (cmd == `${prefix}helplvl1`) {
+    /*if (cmd == `${prefix}helplvl1`) {
         if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {
             let bicon = bot.displayAvatarURL;
             message.channel.send(`<@${message.author.id}>, check your DM's`);
@@ -699,8 +699,8 @@ bot.on("message", async message => {
             message.author.sendMessage(botembed);
             return;
         }
-    }
-    if (cmd == `${prefix}helplvl2`) {
+    }*/
+   /* if (cmd == `${prefix}helplvl2`) {
         if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816") {
             let bicon = bot.displayAvatarURL;
             message.channel.send(`<@${message.author.id}>, check your DM's`);
@@ -717,8 +717,8 @@ bot.on("message", async message => {
             message.author.sendMessage(botembed);
             return;
         }
-    }
-    if (cmd == `${prefix}rolehelp` || cmd == `${prefix}helprole`) {
+    }*/
+    /*if (cmd == `${prefix}rolehelp` || cmd == `${prefix}helprole`) {
         let bicon = bot.displayAvatarURL;
         message.channel.send(`<@${message.author.id}>, check your DM's`);
         let botembed = new Discord.RichEmbed()
@@ -730,7 +730,7 @@ bot.on("message", async message => {
             .setThumbnail(bicon);
         message.author.send(botembed);
         return;
-    }
+    }*/
     //Level one is given to trusted and active members  of the community
     /*
      if(cmd == `${prefix}streamtime`) {

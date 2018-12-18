@@ -48,7 +48,7 @@ bot.on("message", async message => {
     let hyper = message.guild.members.find("id", "430447525800181762");
     let lol = message.guild.members.find("id", message.author.id);
     let ibrahimKhalid = message.guild.members.find("id", "453970692266786816");
-    if (ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger") || ci(messageArray.toString()).includes("nig") || ci(messageArray.toString()).includes("fuck") || ci(messageArray.toString()).includes("fucker") || ci(messageArray.toString()).includes("cunt") || ci(messageArray.toString()).includes("fag") || ci(messageArray.toString()).includes("faggot") || ci(messageArray.toString()).includes("asshole")) {
+    if (ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger") || ci(messageArray.toString()).includes(" nig ") || ci(messageArray.toString()).includes("fuck") || ci(messageArray.toString()).includes("fucker") || ci(messageArray.toString()).includes("cunt") || ci(messageArray.toString()).includes("fag") || ci(messageArray.toString()).includes("faggot") || ci(messageArray.toString()).includes("asshole")) {
         if (lol.hasPermission("KICK_MEMBERS")) {
             return;
         }

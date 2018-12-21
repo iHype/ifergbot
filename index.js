@@ -208,6 +208,13 @@ bot.on("message", async message => {
         }
 
     }
+    if(cmd === `${prefix}avatar` || cmd === `${prefix}av`){
+    let a = message.mentions.members.first()
+    let embed = new Discord.RichEmbed()
+    .setTitle(a.displayName + "'s avatar")
+    .attachFile(a.user.displayAvatarURL);
+    message.channel.send(embed)
+    }
     if (cmd == `${prefix}translate`) {
         if (translateArg.includes("@everyone")) {
             translateArg.splice(/@everyone/g, "@everyoné");

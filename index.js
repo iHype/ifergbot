@@ -43,6 +43,7 @@ bot.on("message", async message => {
     if (message.channel.type === "dm") return message.channel.send("DM commands do not work, to use my bot please join the FergFam to use it\nhttps://www.discord.gg/fergfam");
     var prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
+    let helper = message.guild.roles.find("id", "525717251400400907");
     let fatmomo = message.guild.members.find("id", "424953131386798080");
     let cyber = message.guild.members.find("id", "299495028756054016");
     let hyper = message.guild.members.find("id", "430447525800181762");
@@ -68,7 +69,7 @@ bot.on("message", async message => {
     }
     if (ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be") || ci(messageArray.toString()).includes(".io")) {
         if (message.channel.id === "325373998143897602") return;
-        if (lol.hasPermission("BAN_MEMBERS")) return;
+        if (lol.hasPermission("BAN_MEMBERS") || lol.hasPermission("KICK_MEMBERS")) return;
         if (message.channel.id === "492983540959674389") return;
         if (message.channel.id === "334870578748063745") return;
         if (message.channel.id === "282288006235291649" && message.content.startsWith("m")) return;
@@ -401,7 +402,7 @@ bot.on("message", async message => {
     }
 
     if (cmd == `${prefix}mute`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS")) {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS") || lol.highestRole === helper) {
             let mUser = message.mentions.members.first() || message.guild.members.get(args[0]);
             if (!mUser) {
                 return

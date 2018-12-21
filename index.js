@@ -212,7 +212,7 @@ bot.on("message", async message => {
     let a = message.mentions.members.first()
     let embed = new Discord.RichEmbed()
     .setTitle(a.displayName + "'s avatar")
-    .attachFile(a.user.displayAvatarURL);
+    .setImage(a.user.displayAvatarURL);
     message.channel.send(embed)
     }
     if (cmd == `${prefix}translate`) {

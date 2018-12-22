@@ -110,7 +110,7 @@ bot.on("message", async message => {
 
 
     if (cmd == `${prefix}unmute`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS") || lol.highestRole === helper) {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {
             let muser = message.mentions.members.first() || message.guild.members.get(args[0]);
             let unmrole = message.guild.roles.find('name', "muted");
             muser.removeRole(unmrole);
@@ -409,7 +409,7 @@ bot.on("message", async message => {
     }
 
     if (cmd == `${prefix}mute`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835") {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {
             let mUser = message.mentions.members.first() || message.guild.members.get(args[0]);
             if (!mUser) {
                 return

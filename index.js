@@ -25,7 +25,9 @@ const bot = new Discord.Client({
 });
 bot.commands = new Discord.Collection();
 let sugest = {}
-let muted = {}
+let muted = {
+  withrole: 0
+}
 
 bot.on("ready", async ready => {
     console.log("Bot ready") //;
@@ -36,9 +38,9 @@ bot.on("ready", async ready => {
 })
 bot.on("guildMemberRemove", async memberleft => {
      let muterole = memberleft.guild.roles.find("name", "muted");
-    if(memberleft.roles.has('id', muterole.id)){muted[memberleft.id] = {
-    withrole: 1
-    }}
+    if(memberleft.roles.has('id', muterole.id)){muted[memberleft.id].withrole = 1}
+
+
     if(!muterole){return}
 })
 bot.on("guildMemberAdd", async memberjoin => {

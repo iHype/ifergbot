@@ -126,7 +126,7 @@ bot.on("message", async message => {
 
 
     if (cmd == `${prefix}unmute`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {
             let muser = message.mentions.members.first() || message.guild.members.get(args[0]);
             let unmrole = message.guild.roles.find('name', "muted");
             muser.removeRole(unmrole);
@@ -151,14 +151,14 @@ bot.on("message", async message => {
 
     }
     if (cmd == `${prefix}voicemute`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.hasPermission("KICK_MEMBERS")) {
             let voiceMuteMember = message.mentions.members.first();
             voiceMuteMember.setMute(true);
             message.delete(1);
         }
     }
     if (cmd == `${prefix}voiceunmute`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.hasPermission("KICK_MEMBERS")) {
             let voiceunMuteMember = message.mentions.members.first();
             voiceunMuteMember.setMute(false);
             message.delete(1);
@@ -167,7 +167,7 @@ bot.on("message", async message => {
     if (cmd == `${prefix}commandunban`) {
         let userToUnban = message.mentions.members.first();
         let usertounbanid = userToUnban.id;
-        if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {
+        if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835") {
             var options = {
                 files: './commandbans.txt',
                 from: usertounbanid,
@@ -310,7 +310,7 @@ bot.on("message", async message => {
         });
     }
     if (cmd === `${prefix}whitelistword`) {
-        if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id === "392235424413646848" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816") {
+        if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id === "392235424413646848" || message.author.id == "393412463153905675") {
             try {
                 filter.removeWords(args.join(" ").toString());
                 message.channel.send(message.author + ": succesfully whitelisted word(s): " + args);
@@ -331,7 +331,7 @@ bot.on("message", async message => {
         message.channel.send(filter.clean(unscramble(toUnscramble).join(" ").toString()));
     }
     if (cmd === `${prefix}blacklistword`) {
-        if (message.author.id == "299495028756054016" || message.author.id === "392235424413646848" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816") {
+        if (message.author.id == "299495028756054016" || message.author.id === "392235424413646848" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675") {
             let wordsToBlacklist = args;
             filter.addWords(wordsToBlacklist);
         }
@@ -339,14 +339,14 @@ bot.on("message", async message => {
     }
 
     if (cmd === `${prefix}logs`) {
-        if (message.author.id === "430447525800181762" || message.author.id === "299495028756054016" || message.author.id === "453970692266786816") {
+        if (message.author.id === "430447525800181762"){
             message.author.sendFile('./log.txt');
             message.delete(1);
         }
     }
 
     if (cmd === `${prefix}nick`) {
-        if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "453970692266786816" || message.author.id === "392235424413646848") {
+        if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "437254213689540610" || message.author.id == "430447525800181762" || message.author.id == "341602886935117835" || message.author.id == "393412463153905675" || message.author.id === "392235424413646848") {
             let userNick = message.mentions.members.first();
 
             userNick.setNickname(translateArg.join(" ").toString())
@@ -425,7 +425,7 @@ bot.on("message", async message => {
     }
 
     if (cmd == `${prefix}mute`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {
             let mUser = message.mentions.members.first() || message.guild.members.get(args[0]);
             if (!mUser) {
                 return
@@ -565,7 +565,7 @@ bot.on("message", async message => {
         console.log(message.author + " just made the bot say:\n" + argsSay);
     }
     if (cmd === `${prefix}saydelete`) {
-        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.hasPermission("KICK_MEMBERS")) {
+        if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.hasPermission("KICK_MEMBERS")) {
             if (args.includes("@everyone")) {
 
                 args.splice(/@everyone/g, "@everyoné");

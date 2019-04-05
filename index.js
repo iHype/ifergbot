@@ -466,6 +466,7 @@ bot.on("message", async message => {
     }
 
     if (cmd == "<@481524871038369803>" || cmd == "<@!481524871038369803>") {
+        if(message.channel.id === "282275654760660993"){ return}
         return message.channel.send(message.author + " no u");
     }
     if (cmd == `${prefix}givesponsor` && message.author.id === "430447525800181762") {

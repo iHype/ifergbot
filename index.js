@@ -36,26 +36,26 @@ bot.on("ready", async ready => {
         })
         .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
 })
-bot.on("guildMemberRemove", async memberleft => {
+/*bot.on("guildMemberRemove", async memberleft => {
      let muterole = memberleft.guild.roles.find("name", "muted");
     if(memberleft.roles.has('id', muterole.id)){muted[memberleft.id].withrole = 1}
 
 
     if(!muterole){return}
-})
-bot.on("guildMemberAdd", async memberjoin => {
+})*/
+/*bot.on("guildMemberAdd", async memberjoin => {
 let muterole = memberjoin.guild.roles.find("name", "muted")
 if(muted[memberjoin.id].withrole === "1"){
 memberjoin.addRole(muterole)
 }
-})
+})*/
 bot.on("message", async message => {
     /*if(message.guild.id === "282275654760660993") {
       return;
       } */
     var logs = fs.readFileSync("./log.txt", "utf-8");
     if (message.author.bot) return;
-   if (message.channel.id === "282275654760660993" && message.content.startsWith("-")) return;
+   //if (message.channel.id === "282275654760660993" && message.content.startsWith("-")) return;
     if (message.channel.type === "dm") return message.channel.send("DM commands do not work, to use my bot please join the FergFam to use it\nhttps://www.discord.gg/fergfam");
     var prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
@@ -65,7 +65,7 @@ bot.on("message", async message => {
     let hyper = message.guild.members.find("id", "430447525800181762");
     let lol = message.guild.members.find("id", message.author.id);
     let ibrahimKhalid = message.guild.members.find("id", "453970692266786816");
-    if (ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger") || ci(messageArray.toString()).includes(" nig ") || ci(messageArray.toString()).includes("fuck") || ci(messageArray.toString()).includes("fucker") || ci(messageArray.toString()).includes("cunt") || ci(messageArray.toString()).includes("fag") || ci(messageArray.toString()).includes("faggot") || ci(messageArray.toString()).includes("asshole")) {
+    /*if (ci(messageArray.toString()).includes("nigga") || ci(messageArray.toString()).includes("nigger") || ci(messageArray.toString()).includes(" nig ") || ci(messageArray.toString()).includes("fuck") || ci(messageArray.toString()).includes("fucker") || ci(messageArray.toString()).includes("cunt") || ci(messageArray.toString()).includes("fag") || ci(messageArray.toString()).includes("faggot") || ci(messageArray.toString()).includes("asshole")) {
         if (lol.hasPermission("KICK_MEMBERS")) {
             return;
         }
@@ -81,9 +81,9 @@ bot.on("message", async message => {
         /*hyper.send(embedBadWord);
         cyber.send(embedBadWord);
         fatmomo.send(embedBadWord);
-        ibrahimKhalid.send(embedBadWord);*/
-    }
-    if (ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be") || ci(messageArray.toString()).includes(".io")) {
+        ibrahimKhalid.send(embedBadWord);
+    }*/
+    /*if (ci(messageArray.toString()).includes("www.") || ci(messageArray.toString()).includes("http") || ci(messageArray.toString()).includes(".com") || ci(messageArray.toString()).includes(".gg") || ci(messageArray.toString()).includes(".be") || ci(messageArray.toString()).includes(".io")) {
         if (message.channel.id === "325373998143897602") return;
         if (lol.hasPermission("BAN_MEMBERS") || lol.hasPermission("KICK_MEMBERS")) return;
         if (message.channel.id === "492983540959674389") return;
@@ -104,14 +104,14 @@ bot.on("message", async message => {
         /*hyper.send(embedLink);
         cyber.send(embedLink);
         fatmomo.send(embedLink);
-        ibrahimKhalid.send(embedLink);*/
-    }
+        ibrahimKhalid.send(embedLink);
+    }*/
     let cmd = messageArray['0'];
     let args = messageArray.slice(1);
     let translateArg = args.slice(1) || messageArray.slice(2);
     let tragetLanguage = args['0'] || messageArray['1'];
 
-    var commandbans = fs.readFileSync("./commandbans.txt", "utf-8");
+    /*var commandbans = fs.readFileSync("./commandbans.txt", "utf-8");
     fs.appendFile("./log.txt", message.author + " with username " + message.author.username + " wrote a message at " + message.createdAt + ":\n" + message + "\nin guild: " + message.guild.name + " in channel: " + message.channel + " with the name: #" + message.channel.name + "\n\n", (err) => {if(err){console.log(err)}});
     if (cmd.startsWith("-") && commandbans.includes(message.author.id)) {
         message.delete();
@@ -122,10 +122,10 @@ bot.on("message", async message => {
         sugest[message.author.id] = {
             suggested: 0
         }
-    }
+    }*/
 
 
-    if (cmd == `${prefix}unmute`) {
+    /*if (cmd == `${prefix}unmute`) {
         if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {
             let muser = message.mentions.members.first() || message.guild.members.get(args[0]);
             let unmrole = message.guild.roles.find('name', "muted");
@@ -137,7 +137,7 @@ bot.on("message", async message => {
     if (cmd == `${prefix}languagecodes`) {
         message.channel.send(message.author + ", check DM's");
         return message.author.sendMessage("Check https://cloud.google.com/translate/docs/languages for language codes.");
-    }
+    }*/
 
     /*if (cmd == `${prefix}fortnitetrack`) {
         let platform = args[0]
@@ -145,7 +145,7 @@ bot.on("message", async message => {
         let fortnitetrack = fortnite.user(fortniteTracked, platform);
         message.channel.send(fortnitetrack);
     }*/
-    if (cmd == `${prefix}banlist`) {
+   /* if (cmd == `${prefix}banlist`) {
         let bannedUsers = commandbans.toString();
         message.channel.send("These are the **id's** of the current banned members from using iFerg Bot\n" + bannedUsers);
 
@@ -393,7 +393,7 @@ bot.on("message", async message => {
         }
         var ABC = {
             toAscii: function(bin) {
-                return bin.replace(/\s*[01]{8}\s*/g, function(bin) {
+                return bin.replace(/\s*[01]{8}\s*g, function(bin) {
                     return String.fromCharCode(parseInt(bin, 2))
                 })
             },
@@ -524,7 +524,7 @@ bot.on("message", async message => {
         message.channel.send(botembed);
     }*/
 
-    if (cmd === `${prefix}fixyt` && message.author.id === "430447525800181762") {
+   /* if (cmd === `${prefix}fixyt` && message.author.id === "430447525800181762") {
         let fixit = message.guild.roles.find('name', "Youtuber/Streamer/Pro Player");
         message.guild.channels.forEach(async (channel, id) => {
             await channel.overwritePermissions(fixit, {
@@ -687,7 +687,7 @@ bot.on("message", async message => {
             }
          */
 
-    if (cmd == `${prefix}help`) {
+    /*if (cmd == `${prefix}help`) {
         let bicon = bot.displayAvatarURL;
         message.channel.send(`<@${message.author.id}>, check your DM's`);
         let botembed = new Discord.RichEmbed()
@@ -708,7 +708,7 @@ bot.on("message", async message => {
             .setThumbnail(bicon);
         message.author.sendMessage(botembed);
         return;
-    }
+    }*/
     /*if (cmd == `${prefix}helplvl1`) {
         if (message.author.id == "415583155005685761" || message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || message.author.id == "453970692266786816" || message.author.id == "341602886935117835") {
             let bicon = bot.displayAvatarURL;
@@ -777,7 +777,7 @@ bot.on("message", async message => {
         message.channel.send(botembed);
      	 } */
 
-    if (cmd === `${prefix}botinfo`) {
+    /*if (cmd === `${prefix}botinfo`) {
 
         let bicon = bot.user.displayAvatarURL;
         let botembed = new Discord.RichEmbed()
@@ -788,7 +788,7 @@ bot.on("message", async message => {
             .addField("Created On", bot.user.createdAt);
 
         message.channel.send(botembed);
-    }
+    }*/
 });
 
 bot.login(process.env.BOT_TOKEN);

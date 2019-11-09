@@ -422,7 +422,7 @@ bot.on("message", async message => {
         }
         var binaryToText = binary.decode(args.join())
         //message.channel.send(message.author + ": that translated to normal text is:");
-        message.channel.send(filter.clean(binaryToText.join()));
+        message.channel.send(binaryToText.join());
       //  message.delete(500);
     }/*
 

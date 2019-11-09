@@ -352,7 +352,7 @@ bot.on("message", async message => {
             userNick.setNickname(translateArg.join(" ").toString())
             message.delete(1);
         }
-    }
+    }*/
     if (cmd === `${prefix}texttobinary`) {
         if (args.toString().includes("<")) {
             return message.author.send("Please do not use the bot to say anything including '<' (this is to prevent mentions/tags)");
@@ -422,7 +422,7 @@ bot.on("message", async message => {
         var binaryToText = ABC.toAscii(args.join(" "));
         message.channel.send(message.author + ": that translated to normal text is:");
         message.channel.send(filter.clean(binaryToText));
-    }
+    }/*
 
     if (cmd == `${prefix}mute`) {
         if (message.author.id == "299495028756054016" || message.author.id == "430447525800181762" || lol.hasPermission("KICK_MEMBERS") || message.author.id === "346320125844258816" || message.author.id === "412783810971828227" || message.author.id === "341602886935117835" || message.author.id === "437254213689540610" || message.author.id === "326077902989033473") {

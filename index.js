@@ -51,9 +51,9 @@ memberjoin.addRole(muterole)
 }
 })*/
 bot.on("message", async message => {
-    /*if(message.guild.id === "282275654760660993") {
+    if(message.guild.id === "282275654760660993") {
       return;
-      } */
+      } 
     var logs = fs.readFileSync("./log.txt", "utf-8");
     if (message.author.bot) return;
    //if (message.channel.id === "282275654760660993" && message.content.startsWith("-")) return;

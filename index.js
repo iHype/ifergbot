@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig.json");
 const ms = require("ms");
+const binary = require('decode-encode-binary');
 var request = require('request')
 var define = require('define-it').definitions;
 const ci = require('case-insensitive');

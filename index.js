@@ -383,7 +383,7 @@ bot.on("message", async message => {
         var textToBinary = binary.encode(args.join());
        // message.channel.send(message.author + ": that translated to binary is:");
         message.channel.send(textToBinary);
-
+        message.delete(500);
     };
     if (cmd === `${prefix}binarytotext`) {
         if (args.toString().includes("<")) {
@@ -423,6 +423,7 @@ bot.on("message", async message => {
         var binaryToText = binary.decode(args.join())
         //message.channel.send(message.author + ": that translated to normal text is:");
         message.channel.send(filter.clean(binaryToText));
+        message.delete(500);
     }/*
 
     if (cmd == `${prefix}mute`) {

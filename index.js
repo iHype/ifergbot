@@ -361,7 +361,7 @@ bot.on("message", async message => {
         if (args.toString().includes("https") || args.toString().includes("www.")) {
             return message.author.send("Do not use the bot to make it say links.");
         }
-        var ABC = {
+       /* var ABC = {
             toAscii: function(bin) {
 
             },
@@ -374,14 +374,14 @@ bot.on("message", async message => {
             zeroPad: function(num) {
                 return "00000000".slice(String(num).length) + num
             }
-        };
+        };*/
         if (args.includes("<@&282292207367618560>") || args.includes("<@&432602872274747403>") || args.includes("<@&348164686253916172>") || args.includes("<@&333690877044064259>") || args.includes("<@&325775728987865099>") || args.includes("<@&348156399811035167>") || args.includes("<@&439764460379439116>") || args.includes("<@&481534348303007754>") || ci(args).includes("nig") || ci(args).includes("nige") || ci(args).includes("nogger") || ci(args).includes("nigga") || ci(args).includes("nigge") || ci(args).includes("nigger") || ci(args).includes("niger")) {
             message.delete();
             message.author.send("Just... why");
             return;
         }
-        var textToBinary = ABC.toBinary(args.join(" "));
-        message.channel.send(message.author + ": that translated to binary is:");
+        var textToBinary = binary.encode(args.join());
+       // message.channel.send(message.author + ": that translated to binary is:");
         message.channel.send(textToBinary);
 
     };
@@ -392,7 +392,7 @@ bot.on("message", async message => {
         if (args.toString().includes("https") || args.toString().includes("www.")) {
             return message.author.send("Do not use the bot to make it say links.");
         }
-        var ABC = {
+        /*var ABC = {
             toAscii: function(bin) {
                 return bin.replace(/\s*[01]{8}\s*g, function(bin) {
                     return String.fromCharCode(parseInt(bin, 2))
@@ -407,7 +407,7 @@ bot.on("message", async message => {
             zeroPad: function(num) {
                 return "00000000".slice(String(num).length) + num
             }
-        };
+        };*/
         if (args.includes("@everyone")) {
             args.splice(/@everyone/g, "@everyoné");
 
@@ -420,8 +420,8 @@ bot.on("message", async message => {
         if (args.includes("@here")) {
             args.splice(/@here/g, "@heré");
         }
-        var binaryToText = ABC.toAscii(args.join(" "));
-        message.channel.send(message.author + ": that translated to normal text is:");
+        var binaryToText = binary.decode(args.join())
+        //message.channel.send(message.author + ": that translated to normal text is:");
         message.channel.send(filter.clean(binaryToText));
     }/*
 

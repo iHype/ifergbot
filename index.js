@@ -420,7 +420,7 @@ bot.on("message", async message => {
         if (args.includes("@here")) {
             args.splice(/@here/g, "@heré");
         }
-        var binaryToText = binary.decode(args.join())
+        var binaryToText = binary.decode(args.join(" "))
         //message.channel.send(message.author + ": that translated to normal text is:");
         message.channel.send(binaryToText);
       //  message.delete(500);

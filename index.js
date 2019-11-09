@@ -365,7 +365,7 @@ bot.on("message", async message => {
 
             },
             toBinary: function(str, spaceSeparatedOctets) {
-                return str.replace(/[\s\S]/g, function(str) {
+                return str.replace(/\[\s\S]/g, function(str) {
                     str = ABC.zeroPad(str.charCodeAt().toString(2));
                     return !1 == spaceSeparatedOctets ? str : str + " "
                 })
